@@ -1,0 +1,84 @@
+,,,,,,Domain,,,,Methodoloy,,,,
+Title,Authors,Year,Type,Available,No Classes,Law,"Human
+Behaviour",Technology,Policying,Sources,Evaluation,Context,Comment,Link
+A user-centric taxonomy of cyber harm in the metaverse,"Jeb Webb , Sophie McKenzie *, Robin Doss , Radhika Gorur , Graeme Pye ,
+William Yeoh",2025,Taxonomy,Y,5,,,X,,"- literature review
+- Australian legislation
+- Applicable international standard. IEEE Std 3527.1: Educational Objectives in a Digital Society. ",no evaluation,"Meta-verse cyber harms
+Oriented to protect children
+Australian context",,https://www.sciencedirect.com/science/article/pii/S1756061625000102
+Harmful YouTube Video Detection: A Taxonomy of Online Harm and MLLMs as Alternative Annotators,"Claire Wonjeong Jo, Miki Wesołowska, Magdalena Wojcieszak",2024,Taxonomy,Y,25,,,X,,"- Classes identified from:
+1. existing literature on harm taxonomies and on specific types of harm
+2. community guidelines of YouTube, Meta, and TikTok",- The evaluation is focused on the performance of methods to detect harmful content in videos: LLM models vs Human annotators,YouTube videos specific,"""...we develop a comprehensive taxonomy for online harm on video platforms, categorizing it into six categories: Information, Hate and harassment, Addictive, Clickbait, Sexual, and Physical harms. Next, we establish multimodal large language models as reliable annotators of harmful videos.""",https://arxiv.org/pdf/2411.05854
+"A Collaborative, Human-Centred Taxonomy of AI, Algorithmic, and
+Automation Harms","Abercrombie, et al",2024,Taxonomy,Y,78,,X,X,,"- Classes identified from:
+1. AIAAIC database, informed by more than 1,500 incidents and issues.
+2. Working groups and surveys: consulting approximately 50 users, and others using surveys distributed by email. They were consulted about AIAAIC Repository, what they saw as its limitations and opportunities, and their requirements 
+3. Literature review
+4. Documents from human rights organisations were consulted to inform the definitions of harm","- Annotators agreement
+- Not yet been tested with people outside the internal working group",A taxonomy of harms due to the inappropriate use and misuse of AI and adjacent technologies,"General taxonomy of AI or related technology harms, not specific against for women and girls 
+
+This paper already has a review of taxonomies by Purpose/Focus, Target Audience, Features
+",https://arxiv.org/pdf/2407.01294
+"Social Media Gender-Based Violence: Definition, Classification and Taxonomy from a Systematic Review","Iyawa, et al",2024,Taxonomy,Y,27,,,X,,"- Classes identified from:
+1. systematic review of studies exploring gender-based violence
+perpetrated through social media","- Two authors agreed what studies to include or not in the study
+- No evaluation of taxonomy","Specific study of social media platforms to detect gender-based violence
+Specific taxonomy for harm perpetrated only using social media platforms","""...a novel taxonomy for the classification of social media gender-based violence""
+
+Collects concepts and definitions of gender-based violence from publications",https://ieeexplore.ieee.org/abstract/document/10767513
+"Not My Voice! A Taxonomy of Ethical and Safety Harms of Speech
+Generators","Hutiri, et al",2024,Taxonomy,Y,39,,,X,,"- Classes identified from:
+1. Using 35 reported AI incidents where harms could be
+traced back to speech generation tasks. These incidents occurred between 2019 and 2023 collected from OECD AI incident database, the AIID, he AIAAIC database and from an internal incident
+database.
+2. Annotating these incidents using as starting point the themes proposed by existing AI risk taxonomies",no evaluation,"Specific harms facilitated by speech generators
+The taxonomy was created inspired by (Shelby, et al., 2023) and using OECD AI incident data-
+base, the AIID, the AIAAIC database and from an internal incident database","""propose a conceptual framework for modelling pathways to ethical and safety harms of AI, which we use to develop a taxonomy of harms of speech generators. Our relational approach captures the complexity of risks and harms in sociotechnical AI systems, and yields a taxonomy that can support appropriate policy interventions and decision making for the responsible development and release of speech generation models""
+
+This work includes other details in the taxonomy, such as:
+- who was harmed (i.e. the affected entity), 
+- who is accountable for inflicting the harm (i.e. the responsible entity), 
+- and how this impacts which specific harms materialised.",https://dl.acm.org/doi/pdf/10.1145/3630106.3658911
+"Ontology Development for Cyber Violence Victimization in Korean
+Adolescents",Chun et al.,2024,Ontology,Y,44,,X,X,,"-Classes identified from:
+1. Keywords/themes identified after analysing 3,075 social media sources, including online articles, comments, and blog posts
+2. Key terms extracted from Focus groups with adolescents. A total of 40 adolescents participated, aged 13-17
+3. Key terms extracted from Focus groups with experts. Five experts participated, including community education experts, school social workers’ association members, and employees at youth-related centers.",no evaluation,"Ontology for cyber violence
+Korea context
+Adolescens",,https://journals.sagepub.com/doi/pdf/10.1177/21582440241250152
+Ontology for the prevention of digital crimes against children,"Rafael Logan de Souza Nobre 1, ∗, Rosilene Paiva Marinho de Sousa 2,3 and Luciano Heitor
+Gallegos Marin",2024,Ontology,Y,,X,X,X,,,,"Early stage development
+Children
+Ontology for the prevention of digital crimes against children, specifically focusing on online sexual exploitation, cyberbullying, identity theft, and exposure to harmful content.
+
+Scope
+The scope will include terminologies, legal definitions, and procedural guidelines relevant to identifying, preventing, and responding to these crimes.",,https://ceur-ws.org/Vol-3905/master4.pdf
+Sociotechnical Harms of Algorithmic Systems: Scoping a Taxonomy for Harm Reduction,Shelby (2022),2023,Taxonomy,Y,25,,X,X,,"- Classes identified from a thematic analysis using:
+1. Scoping review of harms described in research of algorithmic systems
+2. Gray literature by nongovernmental organisations (NGOs)
+3. Existing knowledge and networks to surface additional sources, including IEEE, NIST, Data and Society, the Aspen Institute, and the AI Incident Database",no evaluation,Taxonomy of socio-technical harms for algorithmic systems,"""Based on a scoping review of computing research (n=172), we present an applied taxonomy of sociotechnical harms to support a more systematic surfacing of potential harms in algorithmic systems. The final taxonomy builds on and refers to existing taxonomies, classifications, and terminologies.
+Five major themes related to sociotechnical harms — representational, allocative, quality-of-service, interpersonal harms, and social system/societal harms — and sub-themes are presented along with a description of these categories""",https://dl.acm.org/doi/pdf/10.1145/3600211.3604673
+A taxonomy proposal of cyber threats involving children and adolescents,"Moreira, et al.",2022,Taxonomy,Y,56,,X,X,,a systematic review on news articles and blogs indexed by online databases reporting concrete incidents,no evaluation,"Taxonomy of cyber threats involving children and adolescents
+In the context of COVID in Brazil",,https://www.researchgate.net/profile/Claudia-Motta/publication/367320291_A_taxonomy_proposal_of_cyber_threats_involving_children_and_adolescents/links/656c7b05b1398a779dd7aa2f/A-taxonomy-proposal-of-cyber-threats-involving-children-and-adolescents.pdf
+Technology-facilitated sexual violence: a review of virtual violence against women,"Medeiros, et al.",2022,Taxonomy,Y,11,,X,X,,"- Literature review: 30  articles  were  identified,  containing  nine  categories  of  violence  against  women  on  the  Internet",no evaluation,Dedicated to violence against women,"""...Nine categories of violence against women on the Internet were identified, included in the concept of sexual  violence  facilitated  by  technology,  in  addition  to  digital  dating  abuse  and cyberbullying.  The most  commonly addressed categories were digital dating abuse, revenge porn, sexting, and online misogyny. Most of the studies found concluded greater online victimization for women than for men in all categories except cyberbullying""",https://rsdjournal.org/index.php/rsd/article/view/25757/23056
+"Conceptualizing Cybercrime: Definitions, Typologies and Taxonomies","Phillips, et al",2022,Typology,Y,19,X,,X,,"- A structured literature review methodology, to identify key cybercrime definitions, typologies and taxonomies across a range of academic and non-academic (grey literature) sources. 64 papers in total
+- Draws inspiration from The Budapest Convention with a five-category classification system ",no evaluation,"Defining and identifying cybercrime, a taxonomy","Authors indicate that literature in this field is dominated by the Global North
+
+""The taxonomies identified in this review primarily focus on cybercrime offences as defined by legal statutes, which introduces a second fundamental problem of ‘nullen crimen sine lege’ that is to say there is ‘no crime without law’""",https://www.mdpi.com/2673-6756/2/2/28
+A Framework of Severity for Harmful Content Online,"Morgan Klaus Scheuerman, Jialun Aaron Jiang, Casey Fiesler, Jed R. Brubaker",2021,Taxonomy,Y,4,,,X,,"- Conducted interviews with experts who work in content moderation, platform policy, and occupations focused on
+harm assessment and mitigation (e.g., law enforcement, mental health research)",,"Research and policy perspective
+
+A taxonomy of severy of harm
+
+May not be relevant at this stage",""".. Through our analysis, we identified four Types of Harm (physical, emotional, relational, and financial) and eight Dimensions along which the severity of harm can be understood (perspectives, intent, agency, experience, scale, urgency, vulnerability, sphere). We describe how our framework can be applied to both research and policy settings towards deeper understandings of specific forms of harm (e.g., harassment) and prioritization frameworks when implementing policies encompassing many forms of harm.""",https://dl.acm.org/doi/abs/10.1145/3479512
+A Unified Typology of Harmful Content,"Michele Banko, Brendon MacKeen and Laurie Ray",2020,Typology,Y,18,,X,X,,"Classes built considering:
+1. Documentation found in community guidelines and content policy from: Discord, Facebook, Pinterest, Reddit, Twitter and YouTube
+2. Documents gathered from human rights organisations
+3. Recommendations from experts and civil society groups",No evaluation,,"""...we synthesize the most common types of abuse described by industry, policy, community and health experts into a unified typology of harmful content, with detailed criteria and exceptions for each type of abuse.""
+
+Their work intended to consolidate and define the most common types of abuse described in content policies for several major online platforms and white papers from civil society organisations. Documents included: policies from online platforms, proposals from members of civil society, recommendations from experts and health organisations that study the psychological and physical impact of abuse",https://aclanthology.org/2020.alw-1.16.pdf
+A taxonomy of cyber-harms: Defining the impacts of cyber-attacks and understanding how they propagate," Ioannis Agrafiotis , Jason R C Nurse , Michael Goldsmith , Sadie Creese , David Upton",2018,Taxonomy,Y,,,,,,,,Specific cyber-harms affecting organisations. Out of the scope of this paper,"""...we identify various types of harm and create a taxonomy of cyber-harms encountered by organizations. This taxonomy comprises five broad themes: physical or digital harm; economic harm; psychological harm; reputational harm; and social and societal harm.""",https://academic.oup.com/cybersecurity/article/4/1/tyy006/5133288
+Exploring the dark side of online social networks: A taxonomy of negative effects on users,"Boroon, et al.",2018,Taxonomy,Y,6,,,X,,"- systematic literature review of negative effects of online social networks works
+- 20 papers, studies involved more women than men but none studied the role of gender on the impact of online harms",,taxonomy of the negative effects of online social networks use,"""Our review of 20 papers identified 43 negative effects of OSNs use, which we grouped into six categories: cost of social exchange, annoying content, privacy concerns, security threats, cyber bullying and low performance that formed the holistic view of dark side of OSNs use""",https://opus.lib.uts.edu.au/handle/10453/126643
+"Cyber Harm: Concepts, Taxonomy and Measurement","Agrafiotis, et al",2016,Taxonomy,,,,,,,,,May not be relevant,"""This article offers a taxonomy of cyber harm, which enables a better understanding of how harm is manifested within and outside of cyberspace, and proposes an initial set of metrics and methods to assess cyber harm in national contexts. """,https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2828646
