@@ -6,8 +6,12 @@ Led by the Centre for Protecting Women Online (CPWO) it is developed on the grou
 
 ## Ontology description
 
-Ontology graphic description:
-https://purl.archive.org/purl/cpwo/ontology/ooh
+- Prefix: ooh
+- Namespace: https://purl.archive.org/purl/cpwo/ontology/ooh
+
+
+## Ontology graphic description:
+
 
 ![Ontology of Online Gender-based Harms](Ontology/ooh-ontology-long-version.png?raw=true "Ontology of Online Gender-based Harms")
 
