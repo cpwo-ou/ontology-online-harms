@@ -10,9 +10,6 @@ component-id: Chloe\
 name: \'93Chloe\'94\
 description: \
 type: Persona\
-related-components:\
-  - Ortenz#1_MusicAndChildhood\
-  - Ortenz#2_MusicalSocialNetwork\
 streams:\
  - \
 \'97\
