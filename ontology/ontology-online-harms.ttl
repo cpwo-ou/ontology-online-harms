@@ -6,7 +6,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://cpwo.open.ac.uk/ontology/ohh#> .
 
-<http://cpwo.open.ac.uk/ontology/ohh> rdf:type owl:Ontology .
+<https://purl.archive.org/cpwo/ontology/ooh> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
@@ -26,12 +26,12 @@
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasTarget
 :hasTarget rdf:type owl:ObjectProperty ;
            rdfs:domain :HarmfulAct ;
-           rdfs:range <http://cpwo.open.ac.uk/ontology/ohh#Target/Victim> .
+           rdfs:range <https://purl.archive.org/cpwo/ontology/ooh#Target/Victim> .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#identifiedBy
 :identifiedBy rdf:type owl:ObjectProperty ;
-              rdfs:domain :HarmfulAct ;
+              rdfs:domain <https://purl.archive.org/cpwo/ontology/ooh#Target/Victim> ;
               rdfs:range :SensitiveAttributes .
 
 
@@ -71,6 +71,61 @@
            rdfs:range :Impact .
 
 
+###  https://purl.archive.org/cpwo/ontology/ooh#enforcedBy
+:enforcedBy rdf:type owl:ObjectProperty .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#includes
+:includes rdf:type owl:ObjectProperty .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#isBasedOn
+:isBasedOn rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isInvokedFor ;
+           rdfs:domain :LegalInterventions ;
+           rdfs:range :ApplicableLegislation .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#isInvokedFor
+:isInvokedFor rdf:type owl:ObjectProperty ;
+              rdfs:domain :ApplicableLegislation ;
+              rdfs:range :LegalInterventions .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#isObservedBy
+:isObservedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :observes ;
+              rdfs:domain :HarmfulAct ;
+              rdfs:range :Bystander .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#observes
+:observes rdf:type owl:ObjectProperty ;
+          rdfs:domain :Bystander ;
+          rdfs:range :HarmfulAct .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://purl.archive.org/cpwo/ontology/ooh#harmfulActMainName
+:harmfulActMainName rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :HarmfulAct ;
+                    rdfs:range xsd:string .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#hasDefinition
+:hasDefinition rdf:type owl:DatatypeProperty ;
+               rdfs:domain :HarmfulAct ;
+               rdfs:range xsd:string .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#otherNames
+:otherNames rdf:type owl:DatatypeProperty ;
+            rdfs:domain :HarmfulAct .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -100,7 +155,8 @@
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Bots
 :Bots rdf:type owl:Class ;
-      rdfs:subClassOf :Collective .
+      rdfs:subClassOf :Collective ;
+      owl:disjointWith :StateSponsoredActor .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Bystander
@@ -228,10 +284,6 @@
                               owl:someValuesFrom :Motivation
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty :identifiedBy ;
-                              owl:someValuesFrom :SensitiveAttributes
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty :isMitigatedBy ;
                               owl:someValuesFrom :ResponseIntervention
                             ] ,
@@ -240,8 +292,12 @@
                               owl:someValuesFrom :Impact
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty :isObservedBy ;
+                              owl:someValuesFrom :Bystander
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty :hasTarget ;
-                              owl:allValuesFrom <http://cpwo.open.ac.uk/ontology/ohh#Target/Victim>
+                              owl:allValuesFrom <https://purl.archive.org/cpwo/ontology/ooh#Target/Victim>
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty :isPerpetratedBy ;
@@ -320,7 +376,11 @@
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#LegalInterventions
 :LegalInterventions rdf:type owl:Class ;
-                    rdfs:subClassOf :PolicyMeasures .
+                    rdfs:subClassOf :PolicyMeasures ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :isBasedOn ;
+                                      owl:someValuesFrom :ApplicableLegislation
+                                    ] .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#MessagingApp
@@ -518,8 +578,45 @@
                rdfs:subClassOf :Platform .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#Target/Victim
-<http://cpwo.open.ac.uk/ontology/ohh#Target/Victim> rdf:type owl:Class .
+###  https://purl.archive.org/cpwo/ontology/ooh#CollectivePerpetrator
+:CollectivePerpetrator rdf:type owl:Class ;
+                       rdfs:subClassOf :Collective ,
+                                       :Perpetrator ;
+                       owl:disjointWith :CollectiveTarget ,
+                                        :IndividualPerpetrator .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#CollectiveTarget
+:CollectiveTarget rdf:type owl:Class ;
+                  rdfs:subClassOf :Collective ,
+                                  <https://purl.archive.org/cpwo/ontology/ooh#Target/Victim> ;
+                  owl:disjointWith :IndividualTarget .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#IndividualBystander
+:IndividualBystander rdf:type owl:Class ;
+                     rdfs:subClassOf :Bystander ,
+                                     :Individual .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#IndividualPerpetrator
+:IndividualPerpetrator rdf:type owl:Class ;
+                       rdfs:subClassOf :Individual ,
+                                       :Perpetrator .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#IndividualTarget
+:IndividualTarget rdf:type owl:Class ;
+                  rdfs:subClassOf :Individual ,
+                                  <https://purl.archive.org/cpwo/ontology/ooh#Target/Victim> .
+
+
+###  https://purl.archive.org/cpwo/ontology/ooh#Target/Victim
+<https://purl.archive.org/cpwo/ontology/ooh#Target/Victim> rdf:type owl:Class ;
+                                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :identifiedBy ;
+                                                                             owl:someValuesFrom :SensitiveAttributes
+                                                                           ] .
 
 
 #################################################################
@@ -620,13 +717,13 @@
                   :VideoPlatform .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#4chan
-<http://cpwo.open.ac.uk/ontology/ohh#4chan> rdf:type owl:NamedIndividual ,
-                                                     :Forum .
+###  https://purl.archive.org/cpwo/ontology/ooh#4chan
+<https://purl.archive.org/cpwo/ontology/ooh#4chan> rdf:type owl:NamedIndividual ,
+                                                            :Forum .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#Twitter/X
-<http://cpwo.open.ac.uk/ontology/ohh#Twitter/X> rdf:type owl:NamedIndividual .
+###  https://purl.archive.org/cpwo/ontology/ooh#Twitter/X
+<https://purl.archive.org/cpwo/ontology/ooh#Twitter/X> rdf:type owl:NamedIndividual .
 
 
 #################################################################
@@ -636,7 +733,7 @@
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Bystander
                 :Perpetrator
-                <http://cpwo.open.ac.uk/ontology/ohh#Target/Victim>
+                <https://purl.archive.org/cpwo/ontology/ooh#Target/Victim>
               )
 ] .
 
