@@ -38,4 +38,21 @@ For Ontology documentation available [Ontology](ontology).
 
 
 ## Acknowledgements
-This project is being developed and maintained thanks to the Centre for Protecting Women Online [(CPWO)](https://university.open.ac.uk/centres/protecting-women-online/).
+This project is being developed and maintained by to the Centre for Protecting Women Online [(CPWO)](https://university.open.ac.uk/centres/protecting-women-online/).
+
+## Authors
+
+- Development and maintenance
+	- Miriam Fernandez
+	- Alba Morales Tirado
+- Expert input
+	- Miriam Fernandez
+	- Alba Morales Tirado
+	- Angel Pavon-Perez
+	- Olga Jurasz
+	- Ksenia Bakina
+	- Rose Capdevila
+	- Lisa Lazard
+	- Arosha Bandara
+	- Min Zhang
+	- Keely Duddin

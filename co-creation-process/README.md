@@ -15,7 +15,6 @@ The development followed an iterative process. The first stage involved establis
 ## Ontology graphic description:
 
 
-![Ontology of Online Gender-based Harms](ontology/ooh-ontology-long-version.png?raw=true "Ontology of Online Gender-based Harms")
 
 
 
