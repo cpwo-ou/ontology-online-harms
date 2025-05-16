@@ -14,8 +14,9 @@ For Ontology documentation available [Ontology](ontology).
 
 ## Ontology graphic description:
 
+![Ontology of Online Gender-based Harms](ooh-ontology-long-version.png?raw=true "Ontology of Online Gender-based Harms")
 
-![Ontology of Online Gender-based Harms](ontology/ooh-ontology-long-version.png?raw=true "Ontology of Online Gender-based Harms")
 
+![Ontology of Online Gender-based Harms](ooh-ontology-short-version.png?raw=true "Ontology of Online Gender-based Harms")
 
 

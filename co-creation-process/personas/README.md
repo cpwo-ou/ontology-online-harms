@@ -22,9 +22,9 @@ A story is composed of:
 
 ## List of personas
 
-- (add personas here)
-- [Ralph_Music_Historian](https://github.com/polifonia-project/stories/tree/main/Ralph_Music_Historian)
-- [Keith_Music_Producer](https://github.com/polifonia-project/stories/tree/main/Keith_Music_Producer)
+- **Law**
+	- [Ralph_Music_Historian](https://github.com/polifonia-project/stories/tree/main/Ralph_Music_Historian)
+	- [Keith_Music_Producer](https://github.com/polifonia-project/stories/tree/main/Keith_Music_Producer)
 
 
 ## List of stories
