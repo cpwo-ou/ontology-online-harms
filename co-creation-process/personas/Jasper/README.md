@@ -1,22 +1,22 @@
 ---
-component-id: Chloe
-name: “Chloe”
+component-id: Jasper
+name: “Jasper”
 type: Persona
 streams:
- - law
+ - human behaviour
 ---
 
-# Chloe
+# Jasper
 
 ## Name
-Chloe
+Jasper
 
 ## Age
-40
+30
 
 ## Occupation
-Lawyer
+behavioural scientist
 
 ## Interests
 
-- Chloe is a lawyer who specialises in technology law and human rights.
+- understanding of online behaviour and its impact on women and girls

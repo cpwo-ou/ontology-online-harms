@@ -1,22 +1,24 @@
 ---
-component-id: Chloe
-name: “Chloe”
+component-id: Omar
+name: “Omar”
 type: Persona
 streams:
  - law
+ - ethical & responsible AI
 ---
 
-# Chloe
+# Omar
 
 ## Name
-Chloe
+Omar
 
 ## Age
-40
+28
 
 ## Occupation
-Lawyer
+digital forensics compliance officer 
 
 ## Interests
 
-- Chloe is a lawyer who specialises in technology law and human rights.
+- responsible AI 
+- legal and ethical frameworks 
