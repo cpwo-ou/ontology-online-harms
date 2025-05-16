@@ -17,23 +17,5 @@ For Ontology documentation available [Ontology](ontology).
 
 ![Ontology of Online Gender-based Harms](ontology/ooh-ontology-long-version.png?raw=true "Ontology of Online Gender-based Harms")
 
-## Statistics
 
-## Repository contents
-
-* [Co-creation process documentation](co-creation-process)
-	* SoA analysis
-	* [Personas](co-creation-process/personas)
-	* Competency Questions analysis
-	* Approach
-* [Ontology](ontology)
-	* Definitions
-	* Source code
-	* Graphic representation: condensed and complete views
-
-
-## 
-
-
-## Acknowledgements
 
