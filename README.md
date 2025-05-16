@@ -19,10 +19,10 @@ Led by the Centre for Protecting Women Online (CPWO) it is developed on the grou
 ## Repository contents
 
 * [Co-creation process documentation](co-creation-process)
-** Competency Questions analysis
+	* Competency Questions analysis
 * [Knowledge requirements: Personas' scenarios](personas)
 * [Resources](resources)
-** SoA analysis
+	* SoA analysis
 
 ## 
 
