@@ -14,7 +14,6 @@ For Ontology documentation available [Ontology](ontology).
 
 ## Ontology graphic description:
 
-
 ![Ontology of Online Gender-based Harms](ontology/ooh-ontology-long-version.png?raw=true "Ontology of Online Gender-based Harms")
 
 ## Statistics
@@ -31,11 +30,9 @@ For Ontology documentation available [Ontology](ontology).
 	* Source code
 	* Graphic representation: condensed and complete views
 
-
 ## License
 
 [GPL-3.0 license](https://github.com/albamoralest/ontology-online-harms?tab=GPL-3.0-1-ov-file)
-
 
 ## Acknowledgements
 This project is being developed and maintained by to the Centre for Protecting Women Online [(CPWO)](https://university.open.ac.uk/centres/protecting-women-online/).
