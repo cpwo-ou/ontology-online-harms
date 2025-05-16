@@ -7,7 +7,6 @@ A story is composed of:
 - **Persona**
     - It is the description of a typical user.
     - Each Persona is identified by a name, a job/role description, a goal, a scenario, and a set of competency questions linked to their story.
-
 -  **Goal**
     - It is a short textual description of the goal(s) that the persona needs to be addressed in the story.
 - **Scenario**
@@ -17,7 +16,7 @@ A story is composed of:
 -  **Resources (optional)**
     - List of resources (with references/links) where it is expected or known that the persona can find what she's looking for.
 
-## List of personas
+## List of personas by field
 
 - **Law**
 	- [Chloe](Chloe)

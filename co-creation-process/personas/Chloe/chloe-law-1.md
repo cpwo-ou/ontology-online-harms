@@ -1,22 +1,8 @@
-—
-component-id: Chloe
-name: “Chloe”
-description: 
-type: Persona
-streams:
- - law
-—
+# Chloe
 
-# Name
+## Goal
 
-## Name
-
-## Age
+## Scenario
 
 
-# Occupation
-
-
-## Knowledge Skills
-
-## Interest
+## Competency Questions (CQs)
