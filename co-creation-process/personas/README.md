@@ -20,8 +20,16 @@ A story is composed of:
 ## List of personas
 
 - **Law**
-	- [Chloe](chloe)
-	- [Keith_Music_Producer](https://github.com/polifonia-project/stories/tree/main/Keith_Music_Producer)
-
+	- [Chloe](Chloe)
+	- [Omar](Omar)
+- **Ethical & Responsible AI**
+	- [Nadia](Nadia)
+- **Policing**
+	- [Finn](Finn)
+- **Future of Responsible AI**
+	- [Esmeralda](Esmeralda)
+- **Human Behaviour**
+	- [Jasper](Jasper)
 
 ## List of stories
+
