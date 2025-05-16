@@ -10,11 +10,8 @@ A story is composed of:
 
 -  **Goal**
     - It is a short textual description of the goal(s) that the persona needs to be addressed in the story.
-    - maximum number of characters: 1200
-    - The goal(s) is(are) also represented by a short (maximum 5) list of keywords.
 - **Scenario**
     - It is a story describing how the persona's task/need/problem is solved before, during and after interaction with the resource/software/service being developed.
-    - maximum number of characters: 1200
 - **Competency questions (CQs)**
     - Question(s) the persona needs the resource/software/service to answer for satisfying their task/need/problem.
 -  **Resources (optional)**
@@ -23,7 +20,7 @@ A story is composed of:
 ## List of personas
 
 - **Law**
-	- [Ralph_Music_Historian](https://github.com/polifonia-project/stories/tree/main/Ralph_Music_Historian)
+	- [Chloe](chloe)
 	- [Keith_Music_Producer](https://github.com/polifonia-project/stories/tree/main/Keith_Music_Producer)
 
 
