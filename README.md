@@ -18,6 +18,12 @@ For Ontology documentation available [Ontology](ontology).
 
 ## Statistics
 
+* Class count: 89
+* Object property count: 16
+* Data property count: 3
+* SubClassOf: 90
+* DisjointClasses: 9
+
 ## Repository contents
 
 * [Co-creation process documentation](co-creation-process)
