@@ -1,22 +1,22 @@
 ---
-component-id: Chloe
-name: “Chloe”
+component-id: Finn
+name: “Finn”
 type: Persona
 streams:
- - law
+ - policing
 ---
 
-# Chloe
+# Finn
 
 ## Name
-Chloe
+Finn
 
 ## Age
-40
+35
 
 ## Occupation
-Lawyer
+Finn is a health psychologist who works in the police force as a crime analyst
 
 ## Interests
 
-- Chloe is a lawyer who specialises in technology law and human rights.
+- Finn is supporting a law enforcement agency by analysing online harm data, and his aim is to identify patterns, trends and relationships of such harms in the last five year period.
