@@ -1,22 +1,22 @@
 ---
-component-id: Chloe
-name: “Chloe”
+component-id: Nadia
+name: “Nadia”
 type: Persona
 streams:
- - law
+ - ethical & responsible AI
 ---
 
-# Chloe
+# Nadia
 
 ## Name
-Chloe
+Nadia
 
 ## Age
-40
+35
 
 ## Occupation
-Lawyer
+Data analyst
 
 ## Interests
 
-- Chloe is a lawyer who specialises in technology law and human rights.
+- Specialises in identifying and mitigating biases in machine learning algorithms and AI-generated recommendations.

@@ -1,22 +1,22 @@
 ---
-component-id: Chloe
-name: “Chloe”
+component-id: Esmeralda
+name: “Esmeralda”
 type: Persona
 streams:
- - law
+ - future of responsible tech
 ---
 
-# Chloe
+# Esmeralda
 
 ## Name
-Chloe
+Esmeralda
 
 ## Age
-40
+30
 
 ## Occupation
-Lawyer
+Software developer
 
 ## Interests
 
-- Chloe is a lawyer who specialises in technology law and human rights.
+- Esmeralda wants to produce a guideline of best practices for developing responsible technology (software) in a company specialised in health solutions.
