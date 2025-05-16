@@ -1,12 +1,8 @@
 # Co-creation process guide
 
+## State of the art analysis (valid at May 2025)
+
 For the list of works reviewed for the state of the art analysis, see [SoA](SoA-onlineHarms-taxonomies.csv)
-
-## Knowledge requirements elicitation
-
-Knowledge requirements were initially gathered through collaboration among five CPWO teams representing the disciplines of law, software development, responsible AI, policing, and human behaviour. Each team created a Persona, a concept adapted from Software Engineering [Karolita, et al., 2023](https://doi.org/10.1016/j.infsof.2023.107264), to represent the needs and perspectives of potential ontology users.
-
-Personas created: 
 
 ## Ontology development process
 
@@ -14,13 +10,13 @@ The development followed an iterative process. The first stage involved establis
 
 ![Ontology development graphic description](ontology-approach.png?raw=true "Ontology development graphic description")
 
+## Knowledge requirements elicitation
 
-## Ontology description
+Knowledge requirements were initially gathered through collaboration among five CPWO teams representing the disciplines of law, software development, responsible AI, policing, and human behaviour. Each team created a Persona, a concept adapted from Software Engineering [(Karolita, et al., 2023)](https://doi.org/10.1016/j.infsof.2023.107264), to represent the needs and perspectives of potential ontology users.
 
+Personas created: 
+Location: [personas](personas)
 
-## Ontology graphic description:
+## Competency questions (CQs)
 
-
-
-
-
+For the list of competency questions, see [CQs Analysis](cqs-analysis.csv)

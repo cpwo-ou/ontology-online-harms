@@ -1,0 +1,84 @@
+#,Persona story,Competency Questions,Key words,Data points of interest
+1,Chloe (Law),To what extent can the current legal framework capture the range of online harms women and girls experience?,"Online harms
+Legislation","- Legislation
+- Policies, guidelines, best practices
+- Technological Solutions
+- Responses to harm"
+2,Chloe (Law),What are the technical regulations applicable to online harms?,"Technical Regulations
+Online harms",
+3,Chloe (Law),How does law (if at all) regulate specific tech which facilitates harm?,"Legislation
+Law regulating harm
+Tech regulations",
+4,Nadia (Ethical & R-AI),"How do law and technology respond to online harms? For instance, regulations (local or international), tech/software good practices or recommendations","Technological responses
+Law regulating harm
+Tech regulations
+Tech good practices/regulations/guidelins/policies",
+5,Omar (Law and R-AI intersection),How can the software development team assess the risks to online safety associated with their product?,"Technology/tools risk evaluation
+Guidelines
+Risk assessment",
+6,Finn (Policing),"How can an ontology help map online harms to UK legal frameworks (e.g., Malicious Communications Act, Protection from Harassment Act)?","Online harms
+Online harm legislation",
+7,Nadia (Ethical & R-AI),"What kind of harmful content, targeting women and girls, is less likely to be detected by AI systems or social platforms?","Harmful content types
+Identify harmful content","- Online harms
+    Definition
+    Labels
+    Detection"
+8,Nadia (Ethical & R-AI),"What language is used to describe online harms (from a legal, practitioner, tech/software perspective)?",Online harms language definition,
+9,Jasper (Human Behaviour),How do people label or name issues as online harms?,Online harms labels and names,
+10,Jasper (Human Behaviour),How is gendered online harm performed and accomplished on specific online platforms?,"Online harms
+Harm context
+Online platforms",
+11,Jasper (Human Behaviour),"What are the technologies/tools that facilitate abuse? For instance, in intimate partner violence?",Harm enabler technology,"- Technological Solutions
+- Context enabling harm
+  Technological context
+- Response to harm
+- Harm mitigation"
+12,Omar (Law and R-AI intersection),"What are the technological mechanisms available to implement transparency, for instance, to understand how AI models flag harmful content?","Technological response
+Transparency tools
+Responsible principles",
+13,Chloe (Law),What technological tools/developments facilitate these harms?,Technology enabling online harm,
+14,Finn (Policing),"What tools, features, or digital environments are most commonly exploited by perpetrators in VAWG-related online harms?","Technology features facilitating harms
+Tools facilitating harms
+Factors that enable harms",
+15,Jasper (Human Behaviour),What are the tools/techniques available to identify potentially harmful content?,"Identify harmful content
+Technological response
+Harm inhibitor",
+16,Omar (Law and R-AI intersection),Are these tools/techniques different according to the type of harmful content?,"Harm inhibitor
+Type of harm",
+17,Esmeralda (Future of Responsible Tech),"Additionally, depending on the context, what are the specific technology features and usage patterns that enable these harms to arise? ","Harm enabler technology
+Technology features",
+18,Esmeralda (Future of Responsible Tech),How do we mitigate harms according to their different definitions?,"Harm mitigation
+Type of harms",
+19,Esmeralda (Future of Responsible Tech),What are the practices/tools/mechanisms that exacerbate/amplify online harms against women and girls?,Harm enabler technology,
+20,Esmeralda (Future of Responsible Tech),"Similarly, what are the social and technical mechanisms that can be used to minimise the risk of harms arising?",Harm inhibitor,
+21,Esmeralda (Future of Responsible Tech),What are the best practices/tools/mechanisms used to inhibit online harms against women and girls?,"Harm inhibitor
+Type of harm
+Best practices to harm response",
+22,Nadia (Ethical & R-AI),What is the economic and social impact of online harm against women and girls?,"Impact of online harm
+Economic impact of online harm
+Social impact of online harm","- Social support
+- Community support
+- Harm impact
+- Economic impact
+- Social impact"
+23,Jasper (Human Behaviour),How can technologies be used to support women's resistance against online harm?,"Support mechanisms
+Technological responses
+Harm inhibitor technology",
+24,Jasper (Human Behaviour),How do women manage experiences of online sexual harassment and abuse?,"Women and girls experiences
+Support mechanisms",
+25,Esmeralda (Future of Responsible Tech),What information needs to be logged by the product to meet the investigatory needs of enforcement authorities?,Audit practices,"- Data preservation
+- Harm detection
+- Harm response
+- Harm investigation"
+26,Omar (Law and R-AI intersection),What are the guidelines for handling victims’ data when there is a report of online violence?,Handling incident data,
+27,Finn (Policing),"What kinds of technology or frameworks can be used to support the tracking, investigation, and prosecution of online harms affecting women and girls?","Technology for forensic investigation of online harms
+Digital data preservation",
+28,Finn (Policing),"How are digital threats (like online harassment, cyberstalking, or image-based abuse) currently detected, recorded, and investigated by UK police forces?","Technological responses
+Digital threats
+Forensic data management
+Detection, record, investigation of harms",
+29,Finn (Policing),"Do specific personal characteristics (e.g., gender, age, race, disability) influence vulnerability to online harms, and how are these recorded or analysed?","Sensitive attributes
+Incidents records
+Online harms analysis",
+30,Omar (Law and R-AI intersection),How to preserve online data for future investigations?,Digital forensic data preservation,
+31,Jasper (Human Behaviour),How to measure gender-based violence or harm in online platforms?,Measure online violence impact,
