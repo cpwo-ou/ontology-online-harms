@@ -12,17 +12,22 @@ Led by the Centre for Protecting Women Online (CPWO) it is developed on the grou
 ## Ontology graphic description:
 
 
-![Ontology of Online Gender-based Harms](Ontology/ooh-ontology-long-version.png?raw=true "Ontology of Online Gender-based Harms")
+![Ontology of Online Gender-based Harms](ontology/ooh-ontology-long-version.png?raw=true "Ontology of Online Gender-based Harms")
 
 ## Statistics
 
 ## Repository contents
 
 * [Co-creation process documentation](co-creation-process)
-	* Competency Questions analysis
-* [Knowledge requirements: Personas' scenarios](personas)
-* [Resources](resources)
 	* SoA analysis
+	* [Personas](co-creation-process/personas)
+	* Competency Questions analysis
+	* Approach
+* [Ontology](ontology)
+	* Definitions
+	* Source code
+	* Graphic representation: condensed and complete views
+
 
 ## 
 
