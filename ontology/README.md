@@ -1,5 +1,5 @@
-# Ontology Online of Gender-based Harms
-## Produced by the Centre for Protecting Women Online - CPWO
+# Ontology guide
+
 
 The ontology aims to formalise and integrate diverse conceptualisations of online harms, grounded in empirical evidence, stakeholder engagement, and iterative feedback loops. 
 Led by the Centre for Protecting Women Online (CPWO) it is developed on the grounds of a collaborative and coordinated work across domains and sectors, and provide a reusable resource for researchers, practitioners, and developers aiming to understand, detect, and prevent online gender-based harms.
@@ -32,10 +32,8 @@ For Ontology documentation available [Ontology](ontology).
 	* Graphic representation: condensed and complete views
 
 
-## License
-
-[GPL-3.0 license](https://github.com/albamoralest/ontology-online-harms?tab=GPL-3.0-1-ov-file)
+## 
 
 
 ## Acknowledgements
-This project is being developed and maintained thanks to the Centre for Protecting Women Online [(CPWO)](https://university.open.ac.uk/centres/protecting-women-online/).
+
