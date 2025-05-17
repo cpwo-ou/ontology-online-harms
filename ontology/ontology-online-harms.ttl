@@ -6,7 +6,35 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://cpwo.open.ac.uk/ontology/ohh#> .
 
-<https://purl.archive.org/cpwo/ontology/ooh> rdf:type owl:Ontology .
+<https://purl.archive.org/cpwo/ontology/ooh> rdf:type owl:Ontology ;
+                                              <http://purl.org/dc/elements/1.1/creator> "Alba Morales Tirado" ,
+                                                                                        "Miriam Fernandez" ;
+                                              <http://purl.org/dc/elements/1.1/license> "GPL-3.0 license" ;
+                                              <http://purl.org/dc/elements/1.1/title> "Ontology of Online Gender-based Harms" ;
+                                              <http://purl.org/dc/terms/preferredNamespacePrefix> "ooh" ;
+                                              rdfs:comment "The ontology aims to formalise and integrate diverse conceptualisations of online harms, grounded in empirical evidence, stakeholder engagement, and iterative feedback loops. Led by the Centre for Protecting Women Online (CPWO) it is developed on the grounds of a collaborative and coordinated work across domains and sectors, and provide a reusable resource for researchers, practitioners, and developers aiming to understand, detect, and prevent online gender-based harms." ;
+                                              rdfs:label "Ontology of Online Gender-based Harms"@en-gb ;
+                                              owl:versionInfo "OOH Ontology v0.1" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/preferredNamespacePrefix
+<http://purl.org/dc/terms/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
@@ -110,7 +138,8 @@
 #################################################################
 
 ###  https://purl.archive.org/cpwo/ontology/ooh#harmfulActMainName
-:harmfulActMainName rdf:type owl:DatatypeProperty ;
+:harmfulActMainName rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
                     rdfs:domain :HarmfulAct ;
                     rdfs:range xsd:string .
 
@@ -156,7 +185,9 @@
 ###  http://cpwo.open.ac.uk/ontology/ohh#Bots
 :Bots rdf:type owl:Class ;
       rdfs:subClassOf :Collective ;
-      owl:disjointWith :StateSponsoredActor .
+      owl:disjointWith :StateSponsoredActor ,
+                       :CollectivePerpetrator ,
+                       :CollectiveTarget .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Bystander

@@ -29,6 +29,3 @@ A story is composed of:
 	- [Esmeralda](Esmeralda)
 - **Human Behaviour**
 	- [Jasper](Jasper)
-
-## List of stories
-
