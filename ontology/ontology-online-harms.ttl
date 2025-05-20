@@ -7,14 +7,14 @@
 @base <http://cpwo.open.ac.uk/ontology/ohh#> .
 
 <https://purl.archive.org/cpwo/ontology/ooh> rdf:type owl:Ontology ;
-                                              <http://purl.org/dc/elements/1.1/creator> "Alba Morales Tirado" ,
-                                                                                        "Miriam Fernandez" ;
+                                              <http://purl.org/dc/elements/1.1/creator> "\"Morales Tirado, Alba\", \"Fernandez, Miriam\"" ;
                                               <http://purl.org/dc/elements/1.1/license> "GPL-3.0 license" ;
                                               <http://purl.org/dc/elements/1.1/title> "Ontology of Online Gender-based Harms" ;
-                                              <http://purl.org/dc/terms/preferredNamespacePrefix> "ooh" ;
-                                              rdfs:comment "The ontology aims to formalise and integrate diverse conceptualisations of online harms, grounded in empirical evidence, stakeholder engagement, and iterative feedback loops. Led by the Centre for Protecting Women Online (CPWO) it is developed on the grounds of a collaborative and coordinated work across domains and sectors, and provide a reusable resource for researchers, practitioners, and developers aiming to understand, detect, and prevent online gender-based harms." ;
-                                              rdfs:label "Ontology of Online Gender-based Harms"@en-gb ;
-                                              owl:versionInfo "OOH Ontology v0.1" .
+                                              <http://purl.org/dc/terms/language> "\"en\"" ;
+                                              <http://purl.org/dc/terms/preferredNamespacePrefix> [ ] ;
+rdfs:comment "The ontology aims to formalise and integrate diverse conceptualisations of online harms, grounded in empirical evidence, stakeholder engagement, and iterative feedback loops. Led by the Centre for Protecting Women Online (CPWO) it is developed on the grounds of a collaborative and coordinated work across domains and sectors, and provide a reusable resource for researchers, practitioners, and developers aiming to understand, detect, and prevent online gender-based harms." ;
+rdfs:label "Ontology of Online Gender-based Harms"@en-gb ;
+owl:versionInfo "0.1.0" .
 
 #################################################################
 #    Annotation properties
@@ -30,6 +30,10 @@
 
 ###  http://purl.org/dc/elements/1.1/title
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/preferredNamespacePrefix
