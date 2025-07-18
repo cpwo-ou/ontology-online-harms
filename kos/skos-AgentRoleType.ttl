@@ -5,10 +5,10 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix ooh: <https://ontologia.segittur.es/turismo/def/core#> .
-@prefix ooh-kos: <https://ontologia.segittur.es/turismo/kos/> .
+@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
+@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
 
-@prefix oohkos-agentroletype: <https://ontologia.segittur.es/turismo/kos/agentroletype/> .
+@prefix oohkos-agentroletype: <https://purl.org/cpwo/kos/agentroletype/> .
 
 #################################################################
 #
@@ -17,8 +17,8 @@
 #################################################################
 
 ooh-kos:AgentRoleType a skos:ConceptScheme ; 
-    dct:issued "2024-05-24"^^xsd:date ;
-    dct:modified "2025-07-16"^^xsd:date ;
+    dct:issued "2025-07-18"^^xsd:date ;
+    dct:modified "2025-07-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     rdfs:comment "TXXXXXX."@en ;
     rdfs:label "Agent Role Type"@en ;
@@ -51,4 +51,36 @@ oohkos-agentroletype:Perpetrator a skos:Concept;
   skos:note "XXXXX"@en;
   skos:prefLabel "Perpetrator"@en .
 
+oohkos-agentroletype:PerpetratorAccomplice a skos:Concept;
+  skos:inScheme ooh-kos:AgentRoleType;
+  skos:broader oohkos-agentroletype:Perpetrator;
+  skos:note "XXXXX"@en;
+  skos:prefLabel "Perpetrator Accomplice"@en .
 
+oohkos-agentroletype:Instrument a skos:Concept;
+  skos:inScheme ooh-kos:AgentRoleType;
+  skos:note "XXXXX"@en;
+  skos:prefLabel "Instrument"@en .
+
+oohkos-agentroletype:Bystander a skos:Concept;
+  skos:inScheme ooh-kos:AgentRoleType;
+  skos:note "XXXXX"@en;
+  skos:prefLabel "Bystander"@en .
+
+oohkos-agentroletype:SilentBystander a skos:Concept;
+  skos:inScheme ooh-kos:AgentRoleType;
+  skos:broader oohkos-agentroletype:Bystander;
+  skos:note "XXXXX"@en;
+  skos:prefLabel "Silent Bystander"@en .
+
+oohkos-agentroletype:VictimAllyBystander a skos:Concept;
+  skos:inScheme ooh-kos:AgentRoleType;
+  skos:broader oohkos-agentroletype:Bystander;
+  skos:note "XXXXX"@en;
+  skos:prefLabel "Victim Ally Bystander"@en .
+
+oohkos-agentroletype:PerpetratorAllyBystander a skos:Concept;
+  skos:inScheme ooh-kos:AgentRoleType;
+  skos:broader oohkos-agentroletype:Bystander;
+  skos:note "XXXXX"@en;
+  skos:prefLabel "Perpetrator Ally Bystander"@en .
