@@ -1,0 +1,23 @@
+prefix ooh: XXXXx
+prefix oohkos-agentroletype: XXXXX
+prerix ex: <http:://example.org/>
+
+
+ex:createIntimatePhoto_1 a ooh:ImageBasedSexualAbuse .
+ex:JohnDoe a ooh:Person .
+ex:Alice a ooh:Person .
+
+ex:AgentRoleJohnDoeCreateInitimatePhoto_1-perpetrator a ex:AgentRole ;
+ ooh:agent ex:JohnDoe ;
+ ooh:act ex:createIntimatePhoto_1 ;
+ ooh:roleType oohkos-agentroletype:Perpetrator ;
+ ooh:startsAt "XXXXXX"^^xsd:date ;
+ ooh:endsAt "XXXXX"^^xsd:date ;
+ ooh:usesTechnology "Photoshop".
+
+ex:AgentRoleJohnDoeCreateInitimatePhoto_1-victim a ex:AgentRole ;
+ ooh:agent ex:Alice ;
+ ooh:act ex:createIntimatePhoto_1 ;
+ ooh:roleType oohkos-agentroletype:PrimaryVictim ;
+ ooh:startsAt "XXXXXX"^^xsd:date ;
+ ooh:endsAt "XXXXX"^^xsd:date .
