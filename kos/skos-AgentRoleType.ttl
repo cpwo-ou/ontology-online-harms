@@ -53,7 +53,6 @@ oohkos-agentroletype:Perpetrator a skos:Concept;
 
 oohkos-agentroletype:PerpetratorAccomplice a skos:Concept;
   skos:inScheme ooh-kos:AgentRoleType;
-  skos:broader oohkos-agentroletype:Perpetrator;
   skos:note "XXXXX"@en;
   skos:prefLabel "Perpetrator Accomplice"@en .
 
