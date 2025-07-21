@@ -58,7 +58,19 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://cpwo.open.ac.uk/ontology/ohh#belongsTo
 :belongsTo rdf:type owl:ObjectProperty ;
            rdfs:domain :LegislativeClause ;
-           rdfs:range :Law .
+           rdfs:range :Legislation .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#enabledBy
+:enabledBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :Act ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Legislation
+                                      :Policy
+                                      :Technology
+                                    )
+                      ] ;
+           rdfs:label "enabled by"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#ethnicity
@@ -97,6 +109,12 @@ xsd:date rdf:type rdfs:Datatype .
           rdfs:range :Act .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#hasActImpactRelationship
+:hasActImpactRelationship rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Act ;
+                          rdfs:range :ActImpactRelationship .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasActusReus
 :hasActusReus rdf:type owl:ObjectProperty ;
               rdfs:domain :Act ;
@@ -109,19 +127,10 @@ xsd:date rdf:type rdfs:Datatype .
                                rdfs:range :LegislativeClause .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#hasEnabler
-:hasEnabler rdf:type owl:ObjectProperty ;
-            rdfs:domain :Act ;
-            rdfs:range [ rdf:type owl:Class ;
-                         owl:unionOf ( :Legislation
-                                       :Policy
-                                       :Technology
-                                     )
-                       ] .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#hasInhibitor
-:hasInhibitor rdf:type owl:ObjectProperty .
+###  http://cpwo.open.ac.uk/ontology/ohh#hasImpact
+:hasImpact rdf:type owl:ObjectProperty ;
+           rdfs:domain :ActImpactRelationship ;
+           rdfs:range :Impact .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasIntent
@@ -161,6 +170,12 @@ xsd:date rdf:type rdfs:Datatype .
 :includes rdf:type owl:ObjectProperty .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#inhibitedBy
+:inhibitedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Act ;
+             rdfs:label "inhibited by"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#isBasedOn
 :isBasedOn rdf:type owl:ObjectProperty ;
            owl:inverseOf :isInvokedFor ;
@@ -181,6 +196,13 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://cpwo.open.ac.uk/ontology/ohh#isInvokedFor
 :isInvokedFor rdf:type owl:ObjectProperty ;
               rdfs:range :LegalInterventions .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#isInvolvedIn
+:isInvolvedIn rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :AgentRole ;
+              rdfs:range :Act .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#isMitigatedBy
@@ -213,7 +235,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://cpwo.open.ac.uk/ontology/ohh#occursIn
 :occursIn rdf:type owl:ObjectProperty ;
           rdfs:domain :Act ;
-          rdfs:range :Platform .
+          rdfs:range :Space .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#playsAgentRole
@@ -268,10 +290,10 @@ skos:inScheme rdf:type owl:ObjectProperty .
                rdfs:range xsd:string .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#intended
-:intended rdf:type owl:DatatypeProperty ;
-          rdfs:domain :ActImpactRelationship ;
-          rdfs:range xsd:boolean .
+###  http://cpwo.open.ac.uk/ontology/ohh#intentional
+:intentional rdf:type owl:DatatypeProperty ;
+             rdfs:domain :ActImpactRelationship ;
+             rdfs:range xsd:boolean .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#legislativeClauseApplicability
@@ -288,6 +310,11 @@ skos:inScheme rdf:type owl:ObjectProperty .
 ###  http://cpwo.open.ac.uk/ontology/ohh#otherNames
 :otherNames rdf:type owl:DatatypeProperty ;
             rdfs:domain :Act .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#sensitiveAttributes
+:sensitiveAttributes rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :ActImpactRelationship .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#severity
@@ -308,6 +335,12 @@ skos:inScheme rdf:type owl:ObjectProperty .
                   rdfs:subClassOf :TechnologicalSolutions .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#AIChildSexualAbuseMaterial
+:AIChildSexualAbuseMaterial rdf:type owl:Class ;
+                            rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                            rdfs:label "AI child sexual abuse material"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#Accountability
 :Accountability rdf:type owl:Class ;
                 rdfs:subClassOf :ResponsibleTechnologyDesign .
@@ -316,18 +349,6 @@ skos:inScheme rdf:type owl:ObjectProperty .
 ###  http://cpwo.open.ac.uk/ontology/ohh#Act
 :Act rdf:type owl:Class ;
      rdfs:subClassOf [ rdf:type owl:Restriction ;
-                       owl:onProperty :hasMotivation ;
-                       owl:someValuesFrom :Motivation
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :isMitigatedBy ;
-                       owl:someValuesFrom :ResponseIntervention
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :resultsIn ;
-                       owl:someValuesFrom :Impact
-                     ] ,
-                     [ rdf:type owl:Restriction ;
                        owl:onProperty :hasApplicableLegistableClause ;
                        owl:allValuesFrom :LegislativeClause
                      ] ,
@@ -367,7 +388,13 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#AlgorithmicBias
 :AlgorithmicBias rdf:type owl:Class ;
-                 rdfs:subClassOf :Others .
+                 rdfs:subClassOf :Act .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#BroadcastingOfSexualViolence
+:BroadcastingOfSexualViolence rdf:type owl:Class ;
+                              rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                              rdfs:label "Documentation, sharing or broadcasting of sexual violence (recording & sharing sexual assault/rape)"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#BystanderIntervention
@@ -380,9 +407,22 @@ skos:inScheme rdf:type owl:ObjectProperty .
                    rdfs:subClassOf :Motivation .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#ChildSexualAbuseMaterial
+:ChildSexualAbuseMaterial rdf:type owl:Class ;
+                          rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                          rdfs:label "child sexual abuse material"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#CivilSocietyCampaigns
 :CivilSocietyCampaigns rdf:type owl:Class ;
                        rdfs:subClassOf :CommunityResponses .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#CollectionOfPrivateIntimateImages
+:CollectionOfPrivateIntimateImages rdf:type owl:Class ;
+                                   rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                                   rdfs:comment "Collection of private intimate images (trading between groups of men e.g. WhatsApp/Telegram groups etc)"@en-gb ;
+                                   rdfs:label "Collection of private intimate images"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#CommunityResponses
@@ -399,6 +439,30 @@ skos:inScheme rdf:type owl:ObjectProperty .
                  rdfs:subClassOf :Motivation .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#CreatingCheapfakes
+:CreatingCheapfakes rdf:type owl:Class ;
+                    rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                    rdfs:label "Creating Sexualised photoshopped images (cheapfakes - not AI)"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#CreatingDeepfakes
+:CreatingDeepfakes rdf:type owl:Class ;
+                   rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                   rdfs:label "Creating artificially altered intimate images w/o consent (deepfakes)"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#CreatingRealIntimateImagesWithoutConsent
+:CreatingRealIntimateImagesWithoutConsent rdf:type owl:Class ;
+                                          rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                                          rdfs:label "Creating (real) intimate images w/o consent (recording of sexual assault)."@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#Creepshot
+:Creepshot rdf:type owl:Class ;
+           rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+           rdfs:label "Creepshot (woman's body or sexually suggestive)"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#CulturalBeliefs
 :CulturalBeliefs rdf:type owl:Class ;
                  rdfs:subClassOf :Motivation .
@@ -409,9 +473,28 @@ skos:inScheme rdf:type owl:ObjectProperty .
                  rdfs:subClassOf :ContextualFactor .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#Cyberflashing
+:Cyberflashing rdf:type owl:Class ;
+               rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+               rdfs:comment "cyberflashing (sending dick pics)"@en-gb ;
+               rdfs:label "cyberflashing"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#DatingApp
 :DatingApp rdf:type owl:Class ;
-           rdfs:subClassOf :Platform .
+           rdfs:subClassOf :OnlineSpace .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#DocumentationOfSexualViolence
+:DocumentationOfSexualViolence rdf:type owl:Class ;
+                               rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                               rdfs:label "Documentation, sharing or broadcasting of sexual violence (recording & sharing sexual assault/rape)"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#Downblousing
+:Downblousing rdf:type owl:Class ;
+              rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+              rdfs:label "Downblousing"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#EconomicImpact
@@ -451,12 +534,12 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Forum
 :Forum rdf:type owl:Class ;
-       rdfs:subClassOf :Platform .
+       rdfs:subClassOf :OnlineSpace .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#GamingPlatform
 :GamingPlatform rdf:type owl:Class ;
-                rdfs:subClassOf :Platform .
+                rdfs:subClassOf :OnlineSpace .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Gender
@@ -470,15 +553,20 @@ skos:inScheme rdf:type owl:ObjectProperty .
        rdfs:label "Group"@en-gb .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#HackedImages
+:HackedImages rdf:type owl:Class ;
+              rdfs:subClassOf :ImagedBasedSexualAbuseAct .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#IdeologicalMotivation
 :IdeologicalMotivation rdf:type owl:Class ;
                        rdfs:subClassOf :Motivation .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#ImagedBasedSexualAbuse
-:ImagedBasedSexualAbuse rdf:type owl:Class ;
-                        rdfs:subClassOf :Act ;
-                        rdfs:label "Imaged Based Sexual Abuse" .
+###  http://cpwo.open.ac.uk/ontology/ohh#ImagedBasedSexualAbuseAct
+:ImagedBasedSexualAbuseAct rdf:type owl:Class ;
+                           rdfs:subClassOf :Act ;
+                           rdfs:label "Imaged Based Sexual Abuse" .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Impact
@@ -505,9 +593,9 @@ skos:inScheme rdf:type owl:ObjectProperty .
                          rdfs:subClassOf :PolicyMeasures .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#Law
-:Law rdf:type owl:Class ;
-     rdfs:label "Law"@en-gb .
+###  http://cpwo.open.ac.uk/ontology/ohh#LeakedImages
+:LeakedImages rdf:type owl:Class ;
+              rdfs:subClassOf :ImagedBasedSexualAbuseAct .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#LegalContext
@@ -537,7 +625,7 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#MessagingApp
 :MessagingApp rdf:type owl:Class ;
-              rdfs:subClassOf :Platform .
+              rdfs:subClassOf :OnlineSpace .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Misogyny
@@ -548,6 +636,12 @@ skos:inScheme rdf:type owl:ObjectProperty .
 ###  http://cpwo.open.ac.uk/ontology/ohh#Motivation
 :Motivation rdf:type owl:Class ;
             rdfs:seeAlso "mensRea" .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#OffensiveCommentsOnInternet
+:OffensiveCommentsOnInternet rdf:type owl:Class ;
+                             rdfs:subClassOf :TextBasedAbuse ;
+                             rdfs:label "offensive comments on the internet"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#OfflineSpace
@@ -561,9 +655,16 @@ skos:inScheme rdf:type owl:ObjectProperty .
              rdfs:subClassOf :Space .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#Others
-:Others rdf:type owl:Class ;
-        rdfs:subClassOf :Act .
+###  http://cpwo.open.ac.uk/ontology/ohh#PerformingSexualActsOnWebcomeInappropriate
+:PerformingSexualActsOnWebcomeInappropriate rdf:type owl:Class ;
+                                            rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                                            rdfs:label "Performing sexual acts on webcome inappropriate"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#PerformingSexualActsOnWebcomeWithoutConsent
+:PerformingSexualActsOnWebcomeWithoutConsent rdf:type owl:Class ;
+                                             rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                                             rdfs:label "Performing sexual acts on webcome w/o consent"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Person
@@ -575,11 +676,6 @@ skos:inScheme rdf:type owl:ObjectProperty .
 ###  http://cpwo.open.ac.uk/ontology/ohh#PhysicalImpact
 :PhysicalImpact rdf:type owl:Class ;
                 rdfs:subClassOf :Impact .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#Platform
-:Platform rdf:type owl:Class ;
-          rdfs:subClassOf :OnlineSpace .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#PlatformPolicies
@@ -602,9 +698,16 @@ skos:inScheme rdf:type owl:ObjectProperty .
                       rdfs:subClassOf :SensitiveAttributes .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#PressuredSexting
+:PressuredSexting rdf:type owl:Class ;
+                  rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                  rdfs:comment "Pressured sexting (unwanted non-consensual solicitation for private intimate images)" ;
+                  rdfs:label "Pressured sexting"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#ProfessionalNetworks
 :ProfessionalNetworks rdf:type owl:Class ;
-                      rdfs:subClassOf :Platform .
+                      rdfs:subClassOf :OnlineSpace .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#PsychologicalImpact
@@ -651,8 +754,29 @@ skos:inScheme rdf:type owl:ObjectProperty .
              rdfs:subClassOf :TechnologicalSolutions .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#SelfGeneratedChildSexualAbuseMaterial
+:SelfGeneratedChildSexualAbuseMaterial rdf:type owl:Class ;
+                                       rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                                       rdfs:comment "self-generated child sexual abuse material (children pressured to make images)"@en-gb ;
+                                       rdfs:label "self-generated child sexual abuse material"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#SensitiveAttributes
 :SensitiveAttributes rdf:type owl:Class .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#Sexploitation
+:Sexploitation rdf:type owl:Class ;
+               rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+               rdfs:comment "Monetory benefits through trade of non-consensual sexual images  also having a longer relationship/connection. Sextortation, is faster, more transactional."@en-gb ,
+                            "Sexploitation"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#Sextortion
+:Sextortion rdf:type owl:Class ;
+            rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+            rdfs:comment "sextortion (blackmail to share a real or AI sexual image witout consent."@en-gb ;
+            rdfs:label "Sextortion"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#SexualOrientation
@@ -660,14 +784,38 @@ skos:inScheme rdf:type owl:ObjectProperty .
                    rdfs:subClassOf :SensitiveAttributes .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#SharingCheapfakes
+:SharingCheapfakes rdf:type owl:Class ;
+                   rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                   rdfs:label "Sharing sexualised photoshopped images (cheapfakes - not AI)"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#SharingDeepfakes
+:SharingDeepfakes rdf:type owl:Class ;
+                  rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                  rdfs:label "Sharing artificially altered intimate images w/o consent (deepfakes)"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#SharingIntimateImagesWithoutConsent
+:SharingIntimateImagesWithoutConsent rdf:type owl:Class ;
+                                     rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                                     rdfs:label "'Sharing intimate images w/o consent"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#SharingOfSexualViolence
+:SharingOfSexualViolence rdf:type owl:Class ;
+                         rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                         rdfs:label "Documentation, sharing or broadcasting of sexual violence (recording & sharing sexual assault/rape)"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#SocialImpact
 :SocialImpact rdf:type owl:Class ;
               rdfs:subClassOf :Impact .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#SocialMedia
-:SocialMedia rdf:type owl:Class ;
-             rdfs:subClassOf :Platform .
+###  http://cpwo.open.ac.uk/ontology/ohh#SocialNetworkingSite
+:SocialNetworkingSite rdf:type owl:Class ;
+                      rdfs:subClassOf :OnlineSpace .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#SocialSupport
@@ -692,6 +840,11 @@ skos:inScheme rdf:type owl:ObjectProperty .
 :StalkingSurveillance rdf:type owl:Class ;
                       rdfs:subClassOf :Act ;
                       rdfs:label "Stalking and surveillance" .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#StolenImages
+:StolenImages rdf:type owl:Class ;
+              rdfs:subClassOf :ImagedBasedSexualAbuseAct .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#SupportGroups
@@ -726,9 +879,27 @@ skos:inScheme rdf:type owl:ObjectProperty .
                 rdfs:label "Text Based (Sexual) Abuse" .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#ThreateningCommunications
+:ThreateningCommunications rdf:type owl:Class ;
+                           rdfs:subClassOf :TextBasedAbuse ;
+                           rdfs:label "threatening communications"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#ThreateningShareIntimateImagesWithoutConsent
+:ThreateningShareIntimateImagesWithoutConsent rdf:type owl:Class ;
+                                              rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                                              rdfs:label "Threatening to share intimate images w/o consent"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#Transparency
 :Transparency rdf:type owl:Class ;
               rdfs:subClassOf :ResponsibleTechnologyDesign .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#Upskirting
+:Upskirting rdf:type owl:Class ;
+            rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+            rdfs:label "Upskirting"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#VictimAdvocacy
@@ -738,7 +909,31 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#VideoPlatform
 :VideoPlatform rdf:type owl:Class ;
-               rdfs:subClassOf :Platform .
+               rdfs:subClassOf :OnlineSpace .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#VoyeurismThroughCameras
+:VoyeurismThroughCameras rdf:type owl:Class ;
+                         rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                         rdfs:label "Voyeurism through cameras (online/laptop/baby monitoring apps)"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#VoyeurismThroughInternetOfThings
+:VoyeurismThroughInternetOfThings rdf:type owl:Class ;
+                                  rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+                                  rdfs:label "Voyeurism through internet of things (e.g. smart robot hoover - photos of ppl on toilet posted online)"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#Zoom-bombing
+:Zoom-bombing rdf:type owl:Class ;
+              rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+              rdfs:label "Zoom-bombing"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#Zoom-flashing
+:Zoom-flashing rdf:type owl:Class ;
+               rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
+               rdfs:label "Zoom-flashing"@en-gb .
 
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
