@@ -99,16 +99,6 @@ xsd:date rdf:type rdfs:Datatype .
                    ] .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#hasARole
-:hasARole rdf:type owl:ObjectProperty ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :Legislation
-                                      :Technology
-                                    )
-                      ] ;
-          rdfs:range :Act .
-
-
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasActImpactRelationship
 :hasActImpactRelationship rdf:type owl:ObjectProperty ;
                           rdfs:domain :Act ;
@@ -121,27 +111,16 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:range :ActusReus .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#hasApplicableLegistableClause
-:hasApplicableLegistableClause rdf:type owl:ObjectProperty ;
-                               rdfs:domain :Act ;
-                               rdfs:range :LegislativeClause .
+###  http://cpwo.open.ac.uk/ontology/ohh#hasApplicableLegislativeClause
+:hasApplicableLegislativeClause rdf:type owl:ObjectProperty ;
+                                rdfs:domain :Act ;
+                                rdfs:range :LegislativeClause .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasImpact
 :hasImpact rdf:type owl:ObjectProperty ;
            rdfs:domain :ActImpactRelationship ;
            rdfs:range :Impact .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#hasIntent
-:hasIntent rdf:type owl:ObjectProperty ;
-           rdfs:domain :Act .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#hasLegislativeClause
-:hasLegislativeClause rdf:type owl:ObjectProperty ;
-                      rdfs:domain :Act ;
-                      rdfs:range :LegislativeClause .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasMensRea
@@ -154,11 +133,6 @@ xsd:date rdf:type rdfs:Datatype .
 :hasMotivation rdf:type owl:ObjectProperty ;
                rdfs:domain :Act ;
                rdfs:range :Motivation .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#hasTarget
-:hasTarget rdf:type owl:ObjectProperty ;
-           rdfs:domain :Act .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#identifiedBy
@@ -188,11 +162,6 @@ xsd:date rdf:type rdfs:Datatype .
            rdfs:domain :LegalInterventions .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#isCarriedOutBy
-:isCarriedOutBy rdf:type owl:ObjectProperty ;
-                rdfs:range :Act .
-
-
 ###  http://cpwo.open.ac.uk/ontology/ohh#isInfluencedBy
 :isInfluencedBy rdf:type owl:ObjectProperty ;
                 rdfs:domain :Act ;
@@ -215,27 +184,6 @@ xsd:date rdf:type rdfs:Datatype .
 :isMitigatedBy rdf:type owl:ObjectProperty ;
                rdfs:domain :Act ;
                rdfs:range :ResponseIntervention .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#isObservedBy
-:isObservedBy rdf:type owl:ObjectProperty ;
-              owl:inverseOf :observes ;
-              rdfs:domain :Act .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#isPerpetratedBy
-:isPerpetratedBy rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Act .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#isProhibitedBy
-:isProhibitedBy rdf:type owl:ObjectProperty ;
-                rdfs:domain :Act .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#observes
-:observes rdf:type owl:ObjectProperty ;
-          rdfs:range :Act .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#occursIn
@@ -276,12 +224,6 @@ xsd:date rdf:type rdfs:Datatype .
                      ] .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#resultsIn
-:resultsIn rdf:type owl:ObjectProperty ;
-           rdfs:domain :Act ;
-           rdfs:range :Impact .
-
-
 ###  http://cpwo.open.ac.uk/ontology/ohh#roleType
 :roleType rdf:type owl:ObjectProperty ;
           rdfs:domain :AgentRole ;
@@ -316,6 +258,14 @@ skos:inScheme rdf:type owl:ObjectProperty .
 #    Data properties
 #################################################################
 
+###  http://cpwo.open.ac.uk/ontology/ohh#actMainName
+:actMainName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Act ;
+             rdfs:range xsd:string ;
+             rdfs:label "Act Main Name"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#agentRoleDescription
 :agentRoleDescription rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf owl:topDataProperty ;
@@ -338,13 +288,6 @@ skos:inScheme rdf:type owl:ObjectProperty .
 ###  http://cpwo.open.ac.uk/ontology/ohh#endAgentRole
 :endAgentRole rdf:type owl:DatatypeProperty ;
               rdfs:domain :AgentRole .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#harmfulActMainName
-:harmfulActMainName rdf:type owl:DatatypeProperty ,
-                             owl:FunctionalProperty ;
-                    rdfs:domain :Act ;
-                    rdfs:range xsd:string .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasDefinition
@@ -425,7 +368,7 @@ skos:inScheme rdf:type owl:ObjectProperty .
 ###  http://cpwo.open.ac.uk/ontology/ohh#Act
 :Act rdf:type owl:Class ;
      rdfs:subClassOf [ rdf:type owl:Restriction ;
-                       owl:onProperty :hasApplicableLegistableClause ;
+                       owl:onProperty :hasApplicableLegislativeClause ;
                        owl:allValuesFrom :LegislativeClause
                      ] ,
                      [ rdf:type owl:Restriction ;
