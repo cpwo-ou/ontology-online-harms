@@ -173,6 +173,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://cpwo.open.ac.uk/ontology/ohh#inhibitedBy
 :inhibitedBy rdf:type owl:ObjectProperty ;
              rdfs:domain :Act ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :Legislation
+                                        :Policy
+                                        :Technology
+                                      )
+                        ] ;
              rdfs:label "inhibited by"@en-gb .
 
 
@@ -244,6 +250,32 @@ xsd:date rdf:type rdfs:Datatype .
                 rdfs:range :AgentRole .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#race
+:race rdf:type owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:range [ owl:intersectionOf ( skos:Concept
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty skos:inScheme ;
+                                          owl:hasValue ooh-kos:Race
+                                        ]
+                                      ) ;
+                   rdf:type owl:Class
+                 ] .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#religion
+:religion rdf:type owl:ObjectProperty ;
+          rdfs:domain :Person ;
+          rdfs:range [ owl:intersectionOf ( skos:Concept
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty skos:inScheme ;
+                                              owl:hasValue ooh-kos:Religion
+                                            ]
+                                          ) ;
+                       rdf:type owl:Class
+                     ] .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#resultsIn
 :resultsIn rdf:type owl:ObjectProperty ;
            rdfs:domain :Act ;
@@ -263,6 +295,19 @@ xsd:date rdf:type rdfs:Datatype .
                      ] .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#sensitiveAttributeActImpactRelationship
+:sensitiveAttributeActImpactRelationship rdf:type owl:ObjectProperty ;
+                                         rdfs:domain :ActImpactRelationship ;
+                                         rdfs:range [ owl:intersectionOf ( skos:Concept
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty skos:inScheme ;
+                                                                             owl:hasValue ooh-kos:SensitiveAttributes
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] .
+
+
 ###  http://www.w3.org/2004/02/skos/core#inScheme
 skos:inScheme rdf:type owl:ObjectProperty .
 
@@ -271,10 +316,28 @@ skos:inScheme rdf:type owl:ObjectProperty .
 #    Data properties
 #################################################################
 
+###  http://cpwo.open.ac.uk/ontology/ohh#agentRoleDescription
+:agentRoleDescription rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain :AgentRole .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#direct
 :direct rdf:type owl:DatatypeProperty ;
         rdfs:domain :ActImpactRelationship ;
-        rdfs:range xsd:boolean .
+        rdfs:range xsd:boolean ;
+        rdfs:comment "direct impact or indirect impact"@en-gb ;
+        rdfs:label "direct"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#endActImpactRelationship
+:endActImpactRelationship rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :ActImpactRelationship .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#endAgentRole
+:endAgentRole rdf:type owl:DatatypeProperty ;
+              rdfs:domain :AgentRole .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#harmfulActMainName
@@ -290,21 +353,28 @@ skos:inScheme rdf:type owl:ObjectProperty .
                rdfs:range xsd:string .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#intentional
-:intentional rdf:type owl:DatatypeProperty ;
-             rdfs:domain :ActImpactRelationship ;
-             rdfs:range xsd:boolean .
+###  http://cpwo.open.ac.uk/ontology/ohh#impactHasOcurred
+:impactHasOcurred rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Impact ;
+                  rdfs:range xsd:boolean .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#legislativeClauseApplicability
-:legislativeClauseApplicability rdf:type owl:DatatypeProperty ;
-                                rdfs:domain :LegislativeClause ;
-                                rdfs:label "Legislative Clause Applicability"@en-gb .
+###  http://cpwo.open.ac.uk/ontology/ohh#intentionalActImpact
+:intentionalActImpact rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :ActImpactRelationship ;
+                      rdfs:range xsd:boolean ;
+                      rdfs:label "intentional"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#legislativeClauseScope
-:legislativeClauseScope rdf:type owl:DatatypeProperty ;
-                        rdfs:domain :LegislativeClause .
+###  http://cpwo.open.ac.uk/ontology/ohh#legislationApplicability
+:legislationApplicability rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Legislation ;
+                          rdfs:label "Legislative Clause Applicability"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#legislationScope
+:legislationScope rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Legislation .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#otherNames
@@ -312,13 +382,19 @@ skos:inScheme rdf:type owl:ObjectProperty .
             rdfs:domain :Act .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#sensitiveAttributes
-:sensitiveAttributes rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :ActImpactRelationship .
+###  http://cpwo.open.ac.uk/ontology/ohh#severityActImpactRelationship
+:severityActImpactRelationship rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :ActImpactRelationship .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#severity
-:severity rdf:type owl:DatatypeProperty .
+###  http://cpwo.open.ac.uk/ontology/ohh#startActImpactRelationship
+:startActImpactRelationship rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :ActImpactRelationship .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#startAgentRole
+:startAgentRole rdf:type owl:DatatypeProperty ;
+                rdfs:domain :AgentRole .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#startAt
@@ -640,7 +716,7 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#OffensiveCommentsOnInternet
 :OffensiveCommentsOnInternet rdf:type owl:Class ;
-                             rdfs:subClassOf :TextBasedAbuse ;
+                             rdfs:subClassOf :TextBasedAbuseAct ;
                              rdfs:label "offensive comments on the internet"@en-gb .
 
 
@@ -836,10 +912,10 @@ skos:inScheme rdf:type owl:ObjectProperty .
 :Space rdf:type owl:Class .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#StalkingSurveillance
-:StalkingSurveillance rdf:type owl:Class ;
-                      rdfs:subClassOf :Act ;
-                      rdfs:label "Stalking and surveillance" .
+###  http://cpwo.open.ac.uk/ontology/ohh#StalkingSurveillanceAct
+:StalkingSurveillanceAct rdf:type owl:Class ;
+                         rdfs:subClassOf :Act ;
+                         rdfs:label "Stalking and surveillance" .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#StolenImages
@@ -873,15 +949,15 @@ skos:inScheme rdf:type owl:ObjectProperty .
             rdfs:label "Technology" .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#TextBasedAbuse
-:TextBasedAbuse rdf:type owl:Class ;
-                rdfs:subClassOf :Act ;
-                rdfs:label "Text Based (Sexual) Abuse" .
+###  http://cpwo.open.ac.uk/ontology/ohh#TextBasedAbuseAct
+:TextBasedAbuseAct rdf:type owl:Class ;
+                   rdfs:subClassOf :Act ;
+                   rdfs:label "Text Based (Sexual) Abuse" .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#ThreateningCommunications
 :ThreateningCommunications rdf:type owl:Class ;
-                           rdfs:subClassOf :TextBasedAbuse ;
+                           rdfs:subClassOf :TextBasedAbuseAct ;
                            rdfs:label "threatening communications"@en-gb .
 
 
@@ -953,74 +1029,6 @@ skos:ConceptScheme rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  http://cpwo.open.ac.uk/ontology/ohh#Instagram
-:Instagram rdf:type owl:NamedIndividual .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#Isolation
-:Isolation rdf:type owl:NamedIndividual ,
-                    :SocialImpact .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#LinkedIn
-:LinkedIn rdf:type owl:NamedIndividual ,
-                   :ProfessionalNetworks .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#LowerPerceptionOnlineSafety
-:LowerPerceptionOnlineSafety rdf:type owl:NamedIndividual ,
-                                      :SocietalImpact .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#PSTD
-:PSTD rdf:type owl:NamedIndividual ,
-               :PsychologicalImpact .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#Reddit
-:Reddit rdf:type owl:NamedIndividual ,
-                 :Forum .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#Telegram
-:Telegram rdf:type owl:NamedIndividual ,
-                   :MessagingApp .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#TikTok
-:TikTok rdf:type owl:NamedIndividual ,
-                 :VideoPlatform .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#Tinder
-:Tinder rdf:type owl:NamedIndividual ,
-                 :DatingApp .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#Twitch
-:Twitch rdf:type owl:NamedIndividual ,
-                 :GamingPlatform .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#WhatsApp
-:WhatsApp rdf:type owl:NamedIndividual ,
-                   :MessagingApp .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#YouTube
-:YouTube rdf:type owl:NamedIndividual ,
-                  :VideoPlatform .
-
-
-###  https://purl.archive.org/cpwo/ontology/ooh#4chan
-<https://purl.archive.org/cpwo/ontology/ooh#4chan> rdf:type owl:NamedIndividual ,
-                                                            :Forum .
-
-
-###  https://purl.archive.org/cpwo/ontology/ooh#Twitter/X
-<https://purl.archive.org/cpwo/ontology/ooh#Twitter/X> rdf:type owl:NamedIndividual .
-
-
 ###  https://purl.org/cpwo/kos/AgentRoleType
 ooh-kos:AgentRoleType rdf:type owl:NamedIndividual ,
                                skos:ConceptScheme .
@@ -1034,6 +1042,21 @@ ooh-kos:Ethnicity rdf:type owl:NamedIndividual ,
 ###  https://purl.org/cpwo/kos/Gender
 ooh-kos:Gender rdf:type owl:NamedIndividual ,
                         skos:ConceptScheme .
+
+
+###  https://purl.org/cpwo/kos/Race
+ooh-kos:Race rdf:type owl:NamedIndividual ,
+                      skos:ConceptScheme .
+
+
+###  https://purl.org/cpwo/kos/Religion
+ooh-kos:Religion rdf:type owl:NamedIndividual ,
+                          skos:ConceptScheme .
+
+
+###  https://purl.org/cpwo/kos/SensitiveAttributes
+ooh-kos:SensitiveAttributes rdf:type owl:NamedIndividual ,
+                                     skos:ConceptScheme .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
