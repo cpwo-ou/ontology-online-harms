@@ -1,0 +1,68 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
+@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
+
+@prefix oohkos-legislationScope: <https://purl.org/cpwo/kos/legislationScope/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+ooh-kos:LegislationScope a skos:ConceptScheme ; 
+    dct:issued "2025-07-22"^^xsd:date ;
+    dct:modified "2025-07-22"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "Legislation scope."@en ;
+    rdfs:label "Legislation scope"@en ;
+    dct:title "Concept scheme grouping legislation scope"@en .
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+oohkos-legislationScope:International a skos:Concept;
+  skos:inScheme ooh-kos:LegislationScope;
+  skos:note "International legislation"@en;
+  skos:prefLabel "International"@en .
+
+oohkos-legislationScope:UnitedNationsLawOfTreaties a skos:Concept;
+  skos:inScheme ooh-kos:LegislationScope;
+  skos:broader oohkos-legislationScope:UnitedNationsLawOfTreaties;
+  skos:note "UnitedNations Law Of Treaties"@en;
+  skos:prefLabel "UnitedNationsLawOfTreaties"@en .
+
+oohkos-legislationScope:EuropeanRegulation a skos:Concept;
+  skos:inScheme ooh-kos:LegislationScope;
+  skos:broader oohkos-legislationScope:EuropeanRegulation;
+  skos:note "European Regulations"@en;
+  skos:prefLabel "European Regulation"@en .
+
+oohkos-legislationScope:InterAmericanSystemOfHumanRights a skos:Concept;
+  skos:inScheme ooh-kos:LegislationScope;
+  skos:broader oohkos-legislationScope:InterAmericanSystemOfHumanRights;
+  skos:note "Inter-American System Of Human Rights"@en;
+  skos:prefLabel "Inter-American System Of Human Rights"@en .
+
+oohkos-legislationScope:Devolved a skos:Concept;
+  skos:inScheme ooh-kos:LegislationScope;
+  skos:note "Devolved"@en;
+  skos:prefLabel "Devolved"@en .
+
+oohkos-legislationScope:National a skos:Concept;
+  skos:inScheme ooh-kos:LegislationScope;
+  skos:note "National (UK wide)"@en;
+  skos:prefLabel "National"@en .
+oohkos-agentroletype:PerpetratorAllyBystander a skos:Concept;
+  skos:inScheme ooh-kos:AgentRoleType;
+  skos:broader oohkos-agentroletype:Bystander;
+  skos:note "XXXXX"@en;
+  skos:prefLabel "Perpetrator Ally Bystander"@en .
