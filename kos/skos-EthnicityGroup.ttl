@@ -1,0 +1,151 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
+@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
+
+@prefix oohkos-ethnicitygroup: <https://purl.org/cpwo/kos/ethnicitygroup/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+ooh-kos:EthnicityGroup a skos:ConceptScheme ; 
+    dct:issued "2025-07-18"^^xsd:date ;
+    dct:modified "2025-07-18"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "Groups listed using the UK GSS harmonised standards. <https://www.ons.gov.uk/methodology/classificationsandstandards/measuringequality/ethnicgroupnationalidentityandreligion>"@en ;
+    rdfs:label "EthnicityGroup"@en ;
+    dct:title "Concept scheme grouping ethnicity"@en .
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+oohkos-ethnicitygroup:White a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:note "White group"@en;
+  skos:prefLabel "White"@en .
+
+oohkos-ethnicitygroup:British a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:White;
+  skos:note "It includes English/Welsh/Scottish/Northern Irish"@en;
+  skos:prefLabel "British"@en .
+
+oohkos-ethnicitygroup:OtherWhiteBackground a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:White;
+  skos:note "Any other White background, please describe"@en;
+  skos:prefLabel "Other White Background"@en .
+
+oohkos-ethnicitygroup:MixedMultipleEthnicGroup a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:note "Mixed/Multiple ethnic groups"@en;
+  skos:prefLabel "Mixed/Multiple ethnic groups"@en .
+
+oohkos-ethnicitygroup:WhiteBlackCaribbean a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:MixedMultipleEthnicGroup;
+  skos:note "White and Black Caribbean"@en;
+  skos:prefLabel "White and Black Caribbean"@en .
+
+oohkos-ethnicitygroup:WhiteBlackAfrican a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:MixedMultipleEthnicGroup;
+  skos:note "White and Black African"@en;
+  skos:prefLabel "White and Black African"@en .
+
+oohkos-ethnicitygroup:WhiteAsian a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:MixedMultipleEthnicGroup;
+  skos:note "White and Asian"@en;
+  skos:prefLabel "White and Asian"@en .
+
+oohkos-ethnicitygroup:OtherMixedBackground a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:MixedMultipleEthnicGroup;
+  skos:note "Any other Mixed/Multiple ethnic background"@en;
+  skos:prefLabel "Any other Mixed/Multiple ethnic background"@en .
+
+oohkos-ethnicitygroup:AsianAndAsianBritish a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:note "Asian/Asian British"@en;
+  skos:prefLabel "Asian/Asian British"@en .
+
+oohkos-ethnicitygroup:Indian a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:AsianAndAsianBritish;
+  skos:note "Indian"@en;
+  skos:prefLabel "Indian"@en .
+
+oohkos-ethnicitygroup:Pakistani a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:AsianAndAsianBritish;
+  skos:note "Pakistani"@en;
+  skos:prefLabel "Pakistani"@en .
+
+oohkos-ethnicitygroup:Bangladeshi a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:AsianAndAsianBritish;
+  skos:note "Bangladeshi"@en;
+  skos:prefLabel "Bangladeshi"@en .
+
+oohkos-ethnicitygroup:Chinese a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:AsianAndAsianBritish;
+  skos:note "Chinese"@en;
+  skos:prefLabel "Chinese"@en .
+
+oohkos-ethnicitygroup:AnyOtherAsianBackground a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:AsianAndAsianBritish;
+  skos:note "Any other Asian background"@en;
+  skos:prefLabel "Any other Asian background"@en .
+
+oohkos-ethnicitygroup:BlackAfricanCaribbeanBlackBritish a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:note "Black/ African/Caribbean/Black British"@en;
+  skos:prefLabel "Black/ African/Caribbean/Black British"@en .
+
+oohkos-ethnicitygroup:African a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:BlackAfricanCaribbeanBlackBritish;
+  skos:note "African"@en;
+  skos:prefLabel "African"@en .
+
+oohkos-ethnicitygroup:Caribbean a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:BlackAfricanCaribbeanBlackBritish;
+  skos:note "Caribbean"@en;
+  skos:prefLabel "Caribbean"@en .
+
+oohkos-ethnicitygroup:AnyOtherBlackAfricanCaribbeanBlackBackground a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:BlackAfricanCaribbeanBlackBritish;
+  skos:note "Any other Black/African/Caribbean background"@en;
+  skos:prefLabel "Any other Black/African/Caribbean background"@en .
+
+oohkos-ethnicitygroup:OtherEthnicGroup a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:note "Other ethnic group"@en;
+  skos:prefLabel "Other ethnic group"@en .
+
+oohkos-ethnicitygroup:Arab a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:OtherEthnicGroup;
+  skos:note "Arab"@en;
+  skos:prefLabel "Arab"@en .
+
+oohkos-ethnicitygroup:AnyOtherEthnicGroup a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:OtherEthnicGroup;
+  skos:note "Any other ethnic group"@en;
+  skos:prefLabel "Any other ethnic group"@en .
