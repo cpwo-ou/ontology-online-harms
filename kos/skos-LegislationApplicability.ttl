@@ -1,0 +1,40 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
+@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
+
+@prefix oohkos-legislationapplicability: <https://purl.org/cpwo/kos/legislationapplicability/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+ooh-kos:LegislationApplicability a skos:ConceptScheme ; 
+    dct:issued "2025-07-23"^^xsd:date ;
+    dct:modified "2025-07-23"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "A piece of legislation could be an international law, but only applicable for the countries that sign the treaty ."@en ;
+    rdfs:label "Legislation Applicability"@en ;
+    dct:title "Concept scheme grouping legislation applicability types"@en .
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+oohkos-legislationapplicability:Regional a skos:Concept;
+  skos:inScheme ooh-kos:LegislationApplicability;
+  skos:note "Regional"@en;
+  skos:prefLabel "Regional"@en .
+
+oohkos-legislationapplicability:State a skos:Concept;
+  skos:inScheme ooh-kos:LegislationApplicability;
+  skos:note "State"@en;
+  skos:prefLabel "State"@en .
