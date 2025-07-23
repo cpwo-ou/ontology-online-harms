@@ -1,0 +1,45 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
+@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
+
+@prefix oohkos-severityactimpact: <https://purl.org/cpwo/kos/severityactimpact/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+ooh-kos:AgentRoleType a skos:ConceptScheme ; 
+    dct:issued "2025-07-23"^^xsd:date ;
+    dct:modified "2025-07-23"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This is a concept that is not linked to a definition in law but to the perspective of the victims and the act."@en ;
+    rdfs:label "Severity Act Impact Relationship"@en ;
+    dct:title "Concept scheme grouping severity of the impact"@en .
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+oohkos-severityactimpact:Low a skos:Concept;
+  skos:inScheme ooh-kos:SeverityActImpact;
+  skos:note "Law"@en;
+  skos:prefLabel "Low"@en .
+
+oohkos-severityactimpact:Moderate a skos:Concept;
+  skos:inScheme ooh-kos:SeverityActImpact;
+  skos:note "Moderate"@en;
+  skos:prefLabel "Moderate"@en .
+
+oohkos-severityactimpact:High a skos:Concept;
+  skos:inScheme ooh-kos:SeverityActImpact;
+  skos:note "High"@en;
+  skos:prefLabel "High"@en .
