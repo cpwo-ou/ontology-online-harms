@@ -1,0 +1,60 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
+@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
+
+@prefix oohkos-sensitiveattributes: <https://purl.org/cpwo/kos/sensitiveattributes/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+ooh-kos:SensitiveAttributes a skos:ConceptScheme ; 
+    dct:issued "2025-07-23"^^xsd:date ;
+    dct:modified "2025-07-23"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "Attributes that identify a person or a group that are impacted by an act."@en ;
+    rdfs:label "SensitiveAttributes"@en ;
+    dct:title "Concept scheme grouping sensitive attributes types"@en .
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+oohkos-sensitiveattributes:Ethnicity a skos:Concept;
+  skos:inScheme ooh-kos:SensitiveAttributes;
+  skos:note "Ethnicity"@en;
+  skos:prefLabel "Ethnicity"@en .
+
+oohkos-sensitiveattributes:Gender a skos:Concept;
+  skos:inScheme ooh-kos:SensitiveAttributes;
+  skos:note "Gender"@en;
+  skos:prefLabel "Gender"@en .
+
+oohkos-sensitiveattributes:PoliticalOrientation a skos:Concept;
+  skos:inScheme ooh-kos:SensitiveAttributes;
+  skos:note "Political Orientation"@en;
+  skos:prefLabel "PoliticalOrientation"@en .
+
+oohkos-sensitiveattributes:Race a skos:Concept;
+  skos:inScheme ooh-kos:SensitiveAttributes;
+  skos:note "Race"@en;
+  skos:prefLabel "Race"@en .
+
+oohkos-sensitiveattributes:Religion a skos:Concept;
+  skos:inScheme ooh-kos:SensitiveAttributes;
+  skos:note "Religion"@en;
+  skos:prefLabel "Religion"@en .
+
+oohkos-sensitiveattributes:SexualOrientation a skos:Concept;
+  skos:inScheme ooh-kos:SensitiveAttributes;
+  skos:note "Sexual Orientation"@en;
+  skos:prefLabel "Sexual Orientation"@en .
