@@ -61,8 +61,3 @@ oohkos-legislationScope:National a skos:Concept;
   skos:inScheme ooh-kos:LegislationScope;
   skos:note "National (UK wide)"@en;
   skos:prefLabel "National"@en .
-oohkos-agentroletype:PerpetratorAllyBystander a skos:Concept;
-  skos:inScheme ooh-kos:AgentRoleType;
-  skos:broader oohkos-agentroletype:Bystander;
-  skos:note "XXXXX"@en;
-  skos:prefLabel "Perpetrator Ally Bystander"@en .
