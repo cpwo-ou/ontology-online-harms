@@ -1,0 +1,45 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
+@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
+
+@prefix oohkos-relationscope: <https://purl.org/cpwo/kos/relationscope/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+ooh-kos:RelationScope a skos:ConceptScheme ; 
+    dct:issued "2025-07-24"^^xsd:date ;
+    dct:modified "2025-07-24"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "Relation scope."@en ;
+    rdfs:label "Relation Scope"@en ;
+    dct:title "Concept scheme grouping relation scope types"@en .
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+oohkos-relationscope:Work a skos:Concept;
+  skos:inScheme ooh-kos:RelationScope;
+  skos:note "Work"@en;
+  skos:prefLabel "Work"@en .
+
+oohkos-relationscope:Family a skos:Concept;
+  skos:inScheme ooh-kos:RelationScope;
+  skos:note "Family"@en;
+  skos:prefLabel "Family"@en .
+
+oohkos-relationscope:Education a skos:Concept;
+  skos:inScheme ooh-kos:RelationScope;
+  skos:note "Education"@en;
+  skos:prefLabel "Education"@en .
