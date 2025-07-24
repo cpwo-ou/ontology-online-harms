@@ -1,0 +1,94 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
+@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
+
+@prefix oohkos-religiousaffiliation: <https://purl.org/cpwo/kos/religiousaffiliation/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+ooh-kos:ReligiousAffiliation a skos:ConceptScheme ; 
+    dct:issued "2025-07-24"^^xsd:date ;
+    dct:modified "2025-07-24"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "Religious affiliation is the connection or identification with a religion irrespective of actual practice or belief. Recommended concept by the Government Statistical Service (GSS)."@en ;
+    rdfs:label "Religious Affiliation"@en ;
+    dct:title "Concept scheme grouping religious affiliation"@en .
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+oohkos-religiousaffiliation:NoReligion a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:note "No Religion"@en;
+  skos:prefLabel "NoReligion"@en .
+
+oohkos-religiousaffiliation:Christian a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:note "No Religion"@en;
+  skos:prefLabel "NoReligion"@en .
+
+oohkos-religiousaffiliation:ChurchOfEngland a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:broader oohkos-religiousaffiliation:Christian;
+  skos:note "Church of England"@en;
+  skos:prefLabel "Church of England"@en .
+
+oohkos-religiousaffiliation:Catholic a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:broader oohkos-religiousaffiliation:Christian;
+  skos:note "Catholic"@en;
+  skos:prefLabel "Catholic"@en .
+
+oohkos-religiousaffiliation:Protestant a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:broader oohkos-religiousaffiliation:Christian;
+  skos:note "Protestant"@en;
+  skos:prefLabel "Protestant"@en .
+
+oohkos-religiousaffiliation:OtherChristianDenominations a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:broader oohkos-religiousaffiliation:Christian;
+  skos:note "All other Christian denominations"@en;
+  skos:prefLabel "All other Christian denominations"@en .
+
+oohkos-religiousaffiliation:Buddhist a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:note "Buddhist"@en;
+  skos:prefLabel "Buddhist"@en .
+
+oohkos-religiousaffiliation:Hindu a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:note "Hindu"@en;
+  skos:prefLabel "Hindu"@en .
+
+oohkos-religiousaffiliation:Jewish a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:note "Jewish"@en;
+  skos:prefLabel "Jewish"@en .
+
+oohkos-religiousaffiliation:Muslim a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:note "Muslim"@en;
+  skos:prefLabel "Muslim"@en .
+
+oohkos-religiousaffiliation:Sikh a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:note "Sikh"@en;
+  skos:prefLabel "Sikh"@en .
+
+oohkos-religiousaffiliation:AnyOtherReligion a skos:Concept;
+  skos:inScheme ooh-kos:ReligiousAffiliation;
+  skos:note "Any other religion"@en;
+  skos:prefLabel "Any other religion"@en .
