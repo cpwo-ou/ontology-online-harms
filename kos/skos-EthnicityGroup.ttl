@@ -40,11 +40,23 @@ oohkos-ethnicitygroup:British a skos:Concept;
   skos:note "It includes English/Welsh/Scottish/Northern Irish"@en;
   skos:prefLabel "British"@en .
 
-oohkos-ethnicitygroup:OtherWhiteBackground a skos:Concept;
+oohkos-ethnicitygroup:Irish a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:White;
+  skos:note "Irish"@en;
+  skos:prefLabel "Irish"@en .
+
+oohkos-ethnicitygroup:GypsyIrishTraveller a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:broader oohkos-ethnicitygroup:White;
+  skos:note "Gypsy or Irish Traveller"@en;
+  skos:prefLabel "Gypsy or Irish Traveller"@en .
+
+oohkos-ethnicitygroup:AnotherWhiteBackground a skos:Concept;
   skos:inScheme ooh-kos:EthnicityGroup;
   skos:broader oohkos-ethnicitygroup:White;
   skos:note "Any other White background, please describe"@en;
-  skos:prefLabel "Other White Background"@en .
+  skos:prefLabel "Another White Background"@en .
 
 oohkos-ethnicitygroup:MixedMultipleEthnicGroup a skos:Concept;
   skos:inScheme ooh-kos:EthnicityGroup;
@@ -149,3 +161,13 @@ oohkos-ethnicitygroup:AnyOtherEthnicGroup a skos:Concept;
   skos:broader oohkos-ethnicitygroup:OtherEthnicGroup;
   skos:note "Any other ethnic group"@en;
   skos:prefLabel "Any other ethnic group"@en .
+
+oohkos-ethnicitygroup:DoNotKnow a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:note "Do not know"@en;
+  skos:prefLabel "Do not know"@en .
+
+oohkos-ethnicitygroup:PreferNotToSay a skos:Concept;
+  skos:inScheme ooh-kos:EthnicityGroup;
+  skos:note "Prefer not to say"@en;
+  skos:prefLabel "Prefer not to say"@en .
