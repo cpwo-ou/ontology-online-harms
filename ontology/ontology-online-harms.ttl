@@ -253,7 +253,8 @@
                                                  ]
                                                ) ;
                             rdf:type owl:Class
-                          ] .
+                          ] ;
+               rdfs:label "relation scope"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#religiousAffiliation
@@ -345,7 +346,8 @@
                                                   ]
                                                 ) ;
                              rdf:type owl:Class
-                           ] .
+                           ] ;
+                rdfs:label "type of relation"@en-gb .
 
 
 ###  http://www.w3.org/2004/02/skos/core#inScheme
@@ -637,11 +639,6 @@ skos:inScheme rdf:type owl:ObjectProperty .
                 rdfs:label "Economic Impact"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#Ethnicity
-:Ethnicity rdf:type owl:Class ;
-           rdfs:subClassOf :SensitiveAttributes .
-
-
 ###  http://cpwo.open.ac.uk/ontology/ohh#Explainability
 :Explainability rdf:type owl:Class ;
                 rdfs:subClassOf :ResponsibleTechnologyDesign ;
@@ -667,11 +664,6 @@ skos:inScheme rdf:type owl:ObjectProperty .
 ###  http://cpwo.open.ac.uk/ontology/ohh#GamingPlatform
 :GamingPlatform rdf:type owl:Class ;
                 rdfs:subClassOf :OnlineSpace .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#Gender
-:Gender rdf:type owl:Class ;
-        rdfs:subClassOf :SensitiveAttributes .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Group
@@ -815,11 +807,6 @@ skos:inScheme rdf:type owl:ObjectProperty .
         rdfs:label "Policy"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#PoliticalOrientation
-:PoliticalOrientation rdf:type owl:Class ;
-                      rdfs:subClassOf :SensitiveAttributes .
-
-
 ###  http://cpwo.open.ac.uk/ontology/ohh#PressuredSexting
 :PressuredSexting rdf:type owl:Class ;
                   rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
@@ -838,19 +825,9 @@ skos:inScheme rdf:type owl:ObjectProperty .
                      rdfs:label "Psychological Impact"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#Race
-:Race rdf:type owl:Class ;
-      rdfs:subClassOf :SensitiveAttributes .
-
-
 ###  http://cpwo.open.ac.uk/ontology/ohh#Relation
 :Relation rdf:type owl:Class ;
           rdfs:comment "Relation"@en-gb .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#Religion
-:Religion rdf:type owl:Class ;
-          rdfs:subClassOf :SensitiveAttributes .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#ReputationalImpact
@@ -877,10 +854,6 @@ skos:inScheme rdf:type owl:ObjectProperty .
                                        rdfs:label "self-generated child sexual abuse material"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#SensitiveAttributes
-:SensitiveAttributes rdf:type owl:Class .
-
-
 ###  http://cpwo.open.ac.uk/ontology/ohh#Sexploitation
 :Sexploitation rdf:type owl:Class ;
                rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
@@ -893,11 +866,6 @@ skos:inScheme rdf:type owl:ObjectProperty .
             rdfs:subClassOf :ImagedBasedSexualAbuseAct ;
             rdfs:comment "sextortion (blackmail to share a real or AI sexual image witout consent."@en-gb ;
             rdfs:label "Sextortion"@en-gb .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#SexualOrientation
-:SexualOrientation rdf:type owl:Class ;
-                   rdfs:subClassOf :SensitiveAttributes .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#SharingCheapfakes
