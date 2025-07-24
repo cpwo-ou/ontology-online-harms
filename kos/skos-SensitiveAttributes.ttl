@@ -44,11 +44,6 @@ oohkos-sensitiveattributes:PoliticalOrientation a skos:Concept;
   skos:note "Political Orientation"@en;
   skos:prefLabel "PoliticalOrientation"@en .
 
-oohkos-sensitiveattributes:Race a skos:Concept;
-  skos:inScheme ooh-kos:SensitiveAttributes;
-  skos:note "Race"@en;
-  skos:prefLabel "Race"@en .
-
 oohkos-sensitiveattributes:Religion a skos:Concept;
   skos:inScheme ooh-kos:SensitiveAttributes;
   skos:note "Religion"@en;
@@ -58,3 +53,8 @@ oohkos-sensitiveattributes:SexualOrientation a skos:Concept;
   skos:inScheme ooh-kos:SensitiveAttributes;
   skos:note "Sexual Orientation"@en;
   skos:prefLabel "Sexual Orientation"@en .
+
+oohkos-sensitiveattributes:Disability a skos:Concept;
+  skos:inScheme ooh-kos:SensitiveAttributes;
+  skos:note "Disability"@en;
+  skos:prefLabel "Disability"@en .
