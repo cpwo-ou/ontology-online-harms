@@ -44,21 +44,15 @@
 
 
 #################################################################
-#    Datatypes
-#################################################################
-
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
-
-
-#################################################################
 #    Object Properties
 #################################################################
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#belongsTo
 :belongsTo rdf:type owl:ObjectProperty ;
            rdfs:domain :LegislativeClause ;
-           rdfs:range :Legislation .
+           rdfs:range :Legislation ;
+           rdfs:comment "A piece of legislation or an article belongs to a Legislation/Law"@en-gb ;
+           rdfs:label "Belongs to"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#enabledBy
@@ -79,11 +73,13 @@ xsd:date rdf:type rdfs:Datatype .
            rdfs:range [ owl:intersectionOf ( skos:Concept
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty skos:inScheme ;
-                                               owl:hasValue ooh-kos:Ethnicity
+                                               owl:hasValue ooh-kos:EthnicityGroup
                                              ]
                                            ) ;
                         rdf:type owl:Class
-                      ] .
+                      ] ;
+           rdfs:comment "Ethnicity is wider than race and refers to shared cultural experiences, religious beliefs, traditions, ancestry, language dialect or national origins (e.g., African or Irish). Recommended concept by the Government Statistical Service (GSS)"@en-gb ;
+           rdfs:label "ethnicity"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#gender
@@ -96,52 +92,59 @@ xsd:date rdf:type rdfs:Datatype .
                                           ]
                                         ) ;
                      rdf:type owl:Class
-                   ] .
+                   ] ;
+        rdfs:label "gender"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasActImpactRelationship
 :hasActImpactRelationship rdf:type owl:ObjectProperty ;
                           rdfs:domain :Act ;
-                          rdfs:range :ActImpactRelationship .
+                          rdfs:range :ActImpactRelationship ;
+                          rdfs:label "has act-impact relationship"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasActusReus
 :hasActusReus rdf:type owl:ObjectProperty ;
               rdfs:domain :Act ;
-              rdfs:range :ActusReus .
+              rdfs:range :ActusReus ;
+              rdfs:label "has actus reus - has a definition in law"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasApplicableLegislativeClause
 :hasApplicableLegislativeClause rdf:type owl:ObjectProperty ;
                                 rdfs:domain :Act ;
-                                rdfs:range :LegislativeClause .
+                                rdfs:range :LegislativeClause ;
+                                rdfs:comment "the act has an applicable legislation"@en-gb ;
+                                rdfs:label "has applicable legislative clause"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasImpact
 :hasImpact rdf:type owl:ObjectProperty ;
            rdfs:domain :ActImpactRelationship ;
-           rdfs:range :Impact .
+           rdfs:range :Impact ;
+           rdfs:comment "the way impact is linked to an act-impact class"@en-gb ;
+           rdfs:label "has Impact"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasMensRea
 :hasMensRea rdf:type owl:ObjectProperty ;
             rdfs:domain :Act ;
-            rdfs:range :MensRea .
+            rdfs:range :MensRea ;
+            rdfs:label "has mens rea"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#hasMotivation
 :hasMotivation rdf:type owl:ObjectProperty ;
                rdfs:domain :Act ;
-               rdfs:range :Motivation .
+               rdfs:range :Motivation ;
+               rdfs:label "has motivation"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#identifiedBy
-:identifiedBy rdf:type owl:ObjectProperty ;
-              rdfs:range :SensitiveAttributes .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#includes
-:includes rdf:type owl:ObjectProperty .
+###  http://cpwo.open.ac.uk/ontology/ohh#inContextOf
+:inContextOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :Relation ;
+             rdfs:range :Act ;
+             rdfs:label "in the context of"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#inhibitedBy
@@ -156,72 +159,116 @@ xsd:date rdf:type rdfs:Datatype .
              rdfs:label "inhibited by"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#isBasedOn
-:isBasedOn rdf:type owl:ObjectProperty ;
-           owl:inverseOf :isInvokedFor ;
-           rdfs:domain :LegalInterventions .
+###  http://cpwo.open.ac.uk/ontology/ohh#involves
+:involves rdf:type owl:ObjectProperty ;
+          rdfs:domain :Relation ;
+          rdfs:range :Act ;
+          rdfs:label "involves"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#isInfluencedBy
 :isInfluencedBy rdf:type owl:ObjectProperty ;
                 rdfs:domain :Act ;
-                rdfs:range :ContextualFactor .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#isInvokedFor
-:isInvokedFor rdf:type owl:ObjectProperty ;
-              rdfs:range :LegalInterventions .
+                rdfs:range :ContextualFactor ;
+                rdfs:label "is influenced by"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#isInvolvedIn
 :isInvolvedIn rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain :AgentRole ;
-              rdfs:range :Act .
+              rdfs:range :Act ;
+              rdfs:label "is involved in"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#isMitigatedBy
 :isMitigatedBy rdf:type owl:ObjectProperty ;
                rdfs:domain :Act ;
-               rdfs:range :ResponseIntervention .
+               rdfs:range :Intervention ;
+               rdfs:label "is mitigated by"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#legislationApplicability
+:legislationApplicability rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Legislation ;
+                          rdfs:range [ owl:intersectionOf ( skos:Concept
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty skos:inScheme ;
+                                                              owl:hasValue ooh-kos:LegislationApplicability
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                          rdfs:label "legislation applicability"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#legislationScope
+:legislationScope rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Legislation ;
+                  rdfs:range [ owl:intersectionOf ( skos:Concept
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty skos:inScheme ;
+                                                      owl:hasValue ooh-kos:LegislationScope
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+                  rdfs:label "legislation scope"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#legislationType
+:legislationType rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Legislation ;
+                 rdfs:range [ owl:intersectionOf ( skos:Concept
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty skos:inScheme ;
+                                                     owl:hasValue ooh-kos:LegislationType
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+                 rdfs:label "legislation type"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#occursIn
 :occursIn rdf:type owl:ObjectProperty ;
           rdfs:domain :Act ;
-          rdfs:range :Space .
+          rdfs:range :Space ;
+          rdfs:label "occurs in"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#playsAgentRole
 :playsAgentRole rdf:type owl:ObjectProperty ;
                 rdfs:domain :Agent ;
-                rdfs:range :AgentRole .
+                rdfs:range :AgentRole ;
+                rdfs:label "plays agent role"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#race
-:race rdf:type owl:ObjectProperty ;
-      rdfs:domain :Person ;
-      rdfs:range [ owl:intersectionOf ( skos:Concept
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty skos:inScheme ;
-                                          owl:hasValue ooh-kos:Race
-                                        ]
-                                      ) ;
-                   rdf:type owl:Class
-                 ] .
+###  http://cpwo.open.ac.uk/ontology/ohh#relationScope
+:relationScope rdf:type owl:ObjectProperty ;
+               rdfs:domain :Relation ;
+               rdfs:range [ owl:intersectionOf ( skos:Concept
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty skos:inScheme ;
+                                                   owl:hasValue ooh-kos:RelationScope
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#religion
-:religion rdf:type owl:ObjectProperty ;
-          rdfs:domain :Person ;
-          rdfs:range [ owl:intersectionOf ( skos:Concept
-                                            [ rdf:type owl:Restriction ;
-                                              owl:onProperty skos:inScheme ;
-                                              owl:hasValue ooh-kos:Religion
-                                            ]
-                                          ) ;
-                       rdf:type owl:Class
-                     ] .
+###  http://cpwo.open.ac.uk/ontology/ohh#religiousAffiliation
+:religiousAffiliation rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Person ;
+                      rdfs:range [ owl:intersectionOf ( skos:Concept
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty skos:inScheme ;
+                                                          owl:hasValue ooh-kos:ReligiousAffiliation
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+                      rdfs:comment "Religious affiliation is the connection or identification with a religion irrespective of actual practice or belief by the agent. Recommended concept by the Government Statistical Service (GSS)"@en-gb ;
+                      rdfs:label "religion"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#roleType
@@ -234,7 +281,8 @@ xsd:date rdf:type rdfs:Datatype .
                                             ]
                                           ) ;
                        rdf:type owl:Class
-                     ] .
+                     ] ;
+          rdfs:label "role type"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#sensitiveAttributeActImpactRelationship
@@ -247,7 +295,57 @@ xsd:date rdf:type rdfs:Datatype .
                                                                            ]
                                                                          ) ;
                                                       rdf:type owl:Class
-                                                    ] .
+                                                    ] ;
+                                         rdfs:label "sensitive attribute act-impact relationship"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#severityActImpact
+:severityActImpact rdf:type owl:ObjectProperty ;
+                   rdfs:domain :ActImpactRelationship ;
+                   rdfs:range [ owl:intersectionOf ( skos:Concept
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty skos:inScheme ;
+                                                       owl:hasValue ooh-kos:SeverityActImpact
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+                   rdfs:comment "This is a concept that is not linked to a definition in law but to the perspective of the victims and the act"@en-gb ;
+                   rdfs:label "severity act impact relationship"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#sexualOrientation
+:sexualOrientation rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Person ;
+                   rdfs:range [ owl:intersectionOf ( skos:Concept
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty skos:inScheme ;
+                                                       owl:hasValue ooh-kos:SexualOrientation
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+                   rdfs:label "Sexual Orientation"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#trackedBy
+:trackedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :Act ;
+           rdfs:range :TrackingAction ;
+           rdfs:label "tracked by"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#typeOfRelation
+:typeOfRelation rdf:type owl:ObjectProperty ;
+                rdfs:domain :Relation ;
+                rdfs:range [ owl:intersectionOf ( skos:Concept
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty skos:inScheme ;
+                                                    owl:hasValue ooh-kos:TypeOfRelation
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] .
 
 
 ###  http://www.w3.org/2004/02/skos/core#inScheme
@@ -258,101 +356,110 @@ skos:inScheme rdf:type owl:ObjectProperty .
 #    Data properties
 #################################################################
 
-###  http://cpwo.open.ac.uk/ontology/ohh#actMainName
-:actMainName rdf:type owl:DatatypeProperty ,
-                      owl:FunctionalProperty ;
-             rdfs:domain :Act ;
-             rdfs:range xsd:string ;
-             rdfs:label "Act Main Name"@en-gb .
+###  http://cpwo.open.ac.uk/ontology/ohh#actImpactHasOccurred
+:actImpactHasOccurred rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :ActImpactRelationship ;
+                      rdfs:range xsd:boolean ;
+                      rdfs:label "act-impact has occurred"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#agentRoleDescription
 :agentRoleDescription rdf:type owl:DatatypeProperty ;
-                      rdfs:subPropertyOf owl:topDataProperty ;
-                      rdfs:domain :AgentRole .
+                      rdfs:domain :AgentRole ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "agent role description"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#direct
-:direct rdf:type owl:DatatypeProperty ;
-        rdfs:domain :ActImpactRelationship ;
-        rdfs:range xsd:boolean ;
-        rdfs:comment "direct impact or indirect impact"@en-gb ;
-        rdfs:label "direct"@en-gb .
+###  http://cpwo.open.ac.uk/ontology/ohh#directActImpact
+:directActImpact rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :ActImpactRelationship ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:comment "direct impact or indirect impact"@en-gb ;
+                 rdfs:label "direct"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#disability
+:disability rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Person ;
+            rdfs:range xsd:boolean ;
+            rdfs:label "disability"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#endActImpactRelationship
 :endActImpactRelationship rdf:type owl:DatatypeProperty ;
-                          rdfs:domain :ActImpactRelationship .
+                          rdfs:domain :ActImpactRelationship ;
+                          rdfs:comment "the end moment, when the impact finishes"@en-gb ;
+                          rdfs:label "end act-impact relationship"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#endAgentRole
 :endAgentRole rdf:type owl:DatatypeProperty ;
-              rdfs:domain :AgentRole .
+              rdfs:domain :AgentRole ;
+              rdfs:label "end agent role"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#hasDefinition
-:hasDefinition rdf:type owl:DatatypeProperty ;
-               rdfs:domain :Act ;
-               rdfs:range xsd:string .
+###  http://cpwo.open.ac.uk/ontology/ohh#endTrackingAction
+:endTrackingAction rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :TrackingAction ;
+                   rdfs:label "end tracking action"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#impactHasOcurred
-:impactHasOcurred rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :Impact ;
-                  rdfs:range xsd:boolean .
+###  http://cpwo.open.ac.uk/ontology/ohh#hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Act ;
+                rdfs:range xsd:string ;
+                rdfs:label "has definition"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#intentionalActImpact
 :intentionalActImpact rdf:type owl:DatatypeProperty ;
                       rdfs:domain :ActImpactRelationship ;
                       rdfs:range xsd:boolean ;
-                      rdfs:label "intentional"@en-gb .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#legislationApplicability
-:legislationApplicability rdf:type owl:DatatypeProperty ;
-                          rdfs:domain :Legislation ;
-                          rdfs:label "Legislative Clause Applicability"@en-gb .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#legislationScope
-:legislationScope rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :Legislation .
+                      rdfs:label "intentional act-impact"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#otherNames
 :otherNames rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Act .
+            rdfs:domain :Act ;
+            rdfs:range xsd:string ;
+            rdfs:label "other names"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#severityActImpactRelationship
-:severityActImpactRelationship rdf:type owl:DatatypeProperty ;
-                               rdfs:domain :ActImpactRelationship .
+###  http://cpwo.open.ac.uk/ontology/ohh#relationDescripton
+:relationDescripton rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Relation ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "relation description"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#startActImpactRelationship
 :startActImpactRelationship rdf:type owl:DatatypeProperty ;
-                            rdfs:domain :ActImpactRelationship .
+                            rdfs:domain :ActImpactRelationship ;
+                            rdfs:label "start act-impact relationship"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#startAgentRole
 :startAgentRole rdf:type owl:DatatypeProperty ;
-                rdfs:domain :AgentRole .
+                rdfs:domain :AgentRole ;
+                rdfs:label "start agent role"@en-gb .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#startAt
-:startAt rdf:type owl:DatatypeProperty ;
-         rdfs:range xsd:date .
+###  http://cpwo.open.ac.uk/ontology/ohh#startTrackingAction
+:startTrackingAction rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :TrackingAction ;
+                     rdfs:label "start tracking action"@en-gb .
+
+
+###  http://cpwo.open.ac.uk/ontology/ohh#trackingActionDescription
+:trackingActionDescription rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :TrackingAction ;
+                           rdfs:range xsd:string ;
+                           rdfs:label "tracking action description"@en-gb .
 
 
 #################################################################
 #    Classes
 #################################################################
-
-###  http://cpwo.open.ac.uk/ontology/ohh#AIBasedDetection
-:AIBasedDetection rdf:type owl:Class ;
-                  rdfs:subClassOf :TechnologicalSolutions .
-
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#AIChildSexualAbuseMaterial
 :AIChildSexualAbuseMaterial rdf:type owl:Class ;
@@ -362,7 +469,8 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Accountability
 :Accountability rdf:type owl:Class ;
-                rdfs:subClassOf :ResponsibleTechnologyDesign .
+                rdfs:subClassOf :ResponsibleTechnologyDesign ;
+                rdfs:label "Accountability"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Act
@@ -381,17 +489,19 @@ skos:inScheme rdf:type owl:ObjectProperty .
                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                        owl:onClass :Space
                      ] ;
-     rdfs:comment "Primary class representing the legal concept of a criminal act. A crime requires both actus reus and mens rea" ;
+     rdfs:comment "Core class representing the concept of a harmful act. A crime requires both actus reus and mens rea"@en-gb ;
      rdfs:label "Act"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#ActImpactRelationship
 :ActImpactRelationship rdf:type owl:Class ;
+                       rdfs:comment "A class to represent the relationship between Act and Impact. An act could derive in an impact or not, it can be directed, intentional, have a severity, have a period when it ocurred and directed to a certain person/group identified by their [sensitive attributes]."@en-gb ;
                        rdfs:label "Act Impact Relationship"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#ActusReus
 :ActusReus rdf:type owl:Class ;
+           rdfs:comment "Every act has or not a formal definittion in the law. E.g., Revenge porn is not defined in the law, but activities such as creation and distribution are captured in the law and therefore these acts are illegal"@en-gb ;
            rdfs:label "Actus Reus"@en-gb .
 
 
@@ -407,7 +517,8 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#AlgorithmicBias
 :AlgorithmicBias rdf:type owl:Class ;
-                 rdfs:subClassOf :Act .
+                 rdfs:subClassOf :Act ;
+                 rdfs:label "AlgorithmicBias"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#BroadcastingOfSexualViolence
@@ -434,7 +545,8 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#CivilSocietyCampaigns
 :CivilSocietyCampaigns rdf:type owl:Class ;
-                       rdfs:subClassOf :CommunityResponses .
+                       rdfs:subClassOf :CommunityResponses ;
+                       rdfs:label "Civil Society Campaigns"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#CollectionOfPrivateIntimateImages
@@ -446,11 +558,13 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#CommunityResponses
 :CommunityResponses rdf:type owl:Class ;
-                    rdfs:subClassOf :ResponseIntervention .
+                    rdfs:subClassOf :Intervention ;
+                    rdfs:label "Community Responses"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#ContextualFactor
-:ContextualFactor rdf:type owl:Class .
+:ContextualFactor rdf:type owl:Class ;
+                  rdfs:label "Contextual Factor"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#ControlAndPower
@@ -489,7 +603,8 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#CulturalContext
 :CulturalContext rdf:type owl:Class ;
-                 rdfs:subClassOf :ContextualFactor .
+                 rdfs:subClassOf :ContextualFactor ;
+                 rdfs:label "Cultural Context"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Cyberflashing
@@ -518,17 +633,8 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#EconomicImpact
 :EconomicImpact rdf:type owl:Class ;
-                rdfs:subClassOf :Impact .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#EducationAndAwarenessCampaigns
-:EducationAndAwarenessCampaigns rdf:type owl:Class ;
-                                rdfs:subClassOf :PolicyMeasures .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#EnhancedContentModeration
-:EnhancedContentModeration rdf:type owl:Class ;
-                           rdfs:subClassOf :TechnologicalSolutions .
+                rdfs:subClassOf :Impact ;
+                rdfs:label "Economic Impact"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Ethnicity
@@ -538,12 +644,14 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Explainability
 :Explainability rdf:type owl:Class ;
-                rdfs:subClassOf :ResponsibleTechnologyDesign .
+                rdfs:subClassOf :ResponsibleTechnologyDesign ;
+                rdfs:label "Explainability"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Fairness
 :Fairness rdf:type owl:Class ;
-          rdfs:subClassOf :ResponsibleTechnologyDesign .
+          rdfs:subClassOf :ResponsibleTechnologyDesign ;
+          rdfs:label "Fairness"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#FinancialGain
@@ -589,17 +697,21 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Impact
-:Impact rdf:type owl:Class .
+:Impact rdf:type owl:Class ;
+        rdfs:comment "The effect of the act on the victim(s)"@en-gb ;
+        rdfs:label "Impact"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#ImprovedPrivacyDesign
 :ImprovedPrivacyDesign rdf:type owl:Class ;
-                       rdfs:subClassOf :ResponsibleTechnologyDesign .
+                       rdfs:subClassOf :ResponsibleTechnologyDesign ;
+                       rdfs:label "Improve Privacy Design"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#ImprovedSecuritySetting
 :ImprovedSecuritySetting rdf:type owl:Class ;
-                         rdfs:subClassOf :ResponsibleTechnologyDesign .
+                         rdfs:subClassOf :ResponsibleTechnologyDesign ;
+                         rdfs:label "Improved Security Setting"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#InitiateViolence
@@ -607,9 +719,10 @@ skos:inScheme rdf:type owl:ObjectProperty .
                   rdfs:subClassOf :Motivation .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#InternationalFrameworks
-:InternationalFrameworks rdf:type owl:Class ;
-                         rdfs:subClassOf :PolicyMeasures .
+###  http://cpwo.open.ac.uk/ontology/ohh#Intervention
+:Intervention rdf:type owl:Class ;
+              rdfs:comment "Actions taken to minimise or eliminate harms or acts that cause harm"@en-gb ;
+              rdfs:label "Intervention"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#LeakedImages
@@ -619,12 +732,8 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#LegalContext
 :LegalContext rdf:type owl:Class ;
-              rdfs:subClassOf :ContextualFactor .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#LegalInterventions
-:LegalInterventions rdf:type owl:Class ;
-                    rdfs:subClassOf :PolicyMeasures .
+              rdfs:subClassOf :ContextualFactor ;
+              rdfs:label "Legal Context"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Legislation
@@ -639,6 +748,7 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#MensRea
 :MensRea rdf:type owl:Class ;
+         rdfs:comment "Three main types of intention identified: intent/recklessness/knowledge. There can be more and depends on the particular legal case."@en-gb ;
          rdfs:label "Mens Rea"@en-gb .
 
 
@@ -654,7 +764,8 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Motivation
 :Motivation rdf:type owl:Class ;
-            rdfs:seeAlso "mensRea" .
+            rdfs:comment "The reason for doing something, even when it is not achieved"@en-gb ;
+            rdfs:label "Motivation"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#OffensiveCommentsOnInternet
@@ -689,27 +800,19 @@ skos:inScheme rdf:type owl:ObjectProperty .
 ###  http://cpwo.open.ac.uk/ontology/ohh#Person
 :Person rdf:type owl:Class ;
         rdfs:subClassOf :Agent ;
+        rdfs:comment "Representation of a person that could play an agent role such as victim, perpetrator, bystander"@en-gb ;
         rdfs:label "Person"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#PhysicalImpact
 :PhysicalImpact rdf:type owl:Class ;
-                rdfs:subClassOf :Impact .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#PlatformPolicies
-:PlatformPolicies rdf:type owl:Class ;
-                  rdfs:subClassOf :PolicyMeasures .
+                rdfs:subClassOf :Impact ;
+                rdfs:label "Physical Impact"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Policy
 :Policy rdf:type owl:Class ;
         rdfs:label "Policy"@en-gb .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#PolicyMeasures
-:PolicyMeasures rdf:type owl:Class ;
-                rdfs:subClassOf :ResponseIntervention .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#PoliticalOrientation
@@ -731,7 +834,8 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#PsychologicalImpact
 :PsychologicalImpact rdf:type owl:Class ;
-                     rdfs:subClassOf :Impact .
+                     rdfs:subClassOf :Impact ;
+                     rdfs:label "Psychological Impact"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Race
@@ -739,38 +843,31 @@ skos:inScheme rdf:type owl:ObjectProperty .
       rdfs:subClassOf :SensitiveAttributes .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#Relation
+:Relation rdf:type owl:Class ;
+          rdfs:comment "Relation"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#Religion
 :Religion rdf:type owl:Class ;
           rdfs:subClassOf :SensitiveAttributes .
 
 
-###  http://cpwo.open.ac.uk/ontology/ohh#ReportingTools
-:ReportingTools rdf:type owl:Class ;
-                rdfs:subClassOf :TechnologicalSolutions .
-
-
 ###  http://cpwo.open.ac.uk/ontology/ohh#ReputationalImpact
 :ReputationalImpact rdf:type owl:Class ;
-                    rdfs:subClassOf :Impact .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#ResponseIntervention
-:ResponseIntervention rdf:type owl:Class .
+                    rdfs:subClassOf :Impact ;
+                    rdfs:label "Reputational Impact"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#ResponsibleTechnologyDesign
 :ResponsibleTechnologyDesign rdf:type owl:Class ;
-                             rdfs:subClassOf :ResponseIntervention .
+                             rdfs:subClassOf :Intervention ;
+                             rdfs:label "Responsible Technology Design"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Revenge
 :Revenge rdf:type owl:Class ;
          rdfs:subClassOf :Motivation .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#SafetyTools
-:SafetyTools rdf:type owl:Class ;
-             rdfs:subClassOf :TechnologicalSolutions .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#SelfGeneratedChildSexualAbuseMaterial
@@ -829,7 +926,8 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#SocialImpact
 :SocialImpact rdf:type owl:Class ;
-              rdfs:subClassOf :Impact .
+              rdfs:subClassOf :Impact ;
+              rdfs:label "Social Impact"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#SocialNetworkingSite
@@ -838,21 +936,25 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#SocialSupport
-:SocialSupport rdf:type owl:Class .
+:SocialSupport rdf:type owl:Class ;
+               rdfs:label "Social Support"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#SocietalImpact
 :SocietalImpact rdf:type owl:Class ;
-                rdfs:subClassOf :Impact .
+                rdfs:subClassOf :Impact ;
+                rdfs:label "Societal Impact"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#SocioeconomicContext
 :SocioeconomicContext rdf:type owl:Class ;
-                      rdfs:subClassOf :ContextualFactor .
+                      rdfs:subClassOf :ContextualFactor ;
+                      rdfs:label "Socioeconomic Context"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Space
-:Space rdf:type owl:Class .
+:Space rdf:type owl:Class ;
+       rdfs:label "Space"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#StalkingSurveillanceAct
@@ -868,23 +970,21 @@ skos:inScheme rdf:type owl:ObjectProperty .
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#SupportGroups
 :SupportGroups rdf:type owl:Class ;
-               rdfs:subClassOf :CommunityResponses .
+               rdfs:subClassOf :CommunityResponses ;
+               rdfs:label "Support Groups"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#System
 :System rdf:type owl:Class ;
         rdfs:subClassOf :Agent ;
+        rdfs:comment "It can be evaluated as an 'instrument'"@en-gb ;
         rdfs:label "System"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#TechnologicalContext
 :TechnologicalContext rdf:type owl:Class ;
-                      rdfs:subClassOf :ContextualFactor .
-
-
-###  http://cpwo.open.ac.uk/ontology/ohh#TechnologicalSolutions
-:TechnologicalSolutions rdf:type owl:Class ;
-                        rdfs:subClassOf :ResponseIntervention .
+                      rdfs:subClassOf :ContextualFactor ;
+                      rdfs:label "Technological Context"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Technology
@@ -910,9 +1010,15 @@ skos:inScheme rdf:type owl:ObjectProperty .
                                               rdfs:label "Threatening to share intimate images w/o consent"@en-gb .
 
 
+###  http://cpwo.open.ac.uk/ontology/ohh#TrackingAction
+:TrackingAction rdf:type owl:Class ;
+                rdfs:comment "Tracking Action"@en-gb .
+
+
 ###  http://cpwo.open.ac.uk/ontology/ohh#Transparency
 :Transparency rdf:type owl:Class ;
-              rdfs:subClassOf :ResponsibleTechnologyDesign .
+              rdfs:subClassOf :ResponsibleTechnologyDesign ;
+              rdfs:label "Transparency"@en-gb .
 
 
 ###  http://cpwo.open.ac.uk/ontology/ohh#Upskirting
@@ -962,6 +1068,11 @@ skos:Concept rdf:type owl:Class .
 ###  http://www.w3.org/2004/02/skos/core#ConceptScheme
 skos:ConceptScheme rdf:type owl:Class ;
                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty :ethnicity ;
+                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty :roleType ;
                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass skos:Concept
@@ -977,9 +1088,9 @@ ooh-kos:AgentRoleType rdf:type owl:NamedIndividual ,
                                skos:ConceptScheme .
 
 
-###  https://purl.org/cpwo/kos/Ethnicity
-ooh-kos:Ethnicity rdf:type owl:NamedIndividual ,
-                           skos:ConceptScheme .
+###  https://purl.org/cpwo/kos/EthnicityGroup
+ooh-kos:EthnicityGroup rdf:type owl:NamedIndividual ,
+                                skos:ConceptScheme .
 
 
 ###  https://purl.org/cpwo/kos/Gender
@@ -987,19 +1098,57 @@ ooh-kos:Gender rdf:type owl:NamedIndividual ,
                         skos:ConceptScheme .
 
 
-###  https://purl.org/cpwo/kos/Race
-ooh-kos:Race rdf:type owl:NamedIndividual ,
-                      skos:ConceptScheme .
+###  https://purl.org/cpwo/kos/LegislationApplicability
+ooh-kos:LegislationApplicability rdf:type owl:NamedIndividual ,
+                                          skos:ConceptScheme .
 
 
-###  https://purl.org/cpwo/kos/Religion
-ooh-kos:Religion rdf:type owl:NamedIndividual ,
-                          skos:ConceptScheme .
+###  https://purl.org/cpwo/kos/LegislationScope
+ooh-kos:LegislationScope rdf:type owl:NamedIndividual ,
+                                  skos:ConceptScheme .
+
+
+###  https://purl.org/cpwo/kos/LegislationType
+ooh-kos:LegislationType rdf:type owl:NamedIndividual ,
+                                 skos:ConceptScheme .
+
+
+###  https://purl.org/cpwo/kos/RelationScope
+ooh-kos:RelationScope rdf:type owl:NamedIndividual ,
+                               skos:ConceptScheme .
+
+
+###  https://purl.org/cpwo/kos/ReligiousAffiliation
+ooh-kos:ReligiousAffiliation rdf:type owl:NamedIndividual ,
+                                      skos:ConceptScheme .
 
 
 ###  https://purl.org/cpwo/kos/SensitiveAttributes
 ooh-kos:SensitiveAttributes rdf:type owl:NamedIndividual ,
                                      skos:ConceptScheme .
+
+
+###  https://purl.org/cpwo/kos/SeverityActImpact
+ooh-kos:SeverityActImpact rdf:type owl:NamedIndividual ,
+                                   skos:ConceptScheme .
+
+
+###  https://purl.org/cpwo/kos/SexualOrientation
+ooh-kos:SexualOrientation rdf:type owl:NamedIndividual ,
+                                   skos:ConceptScheme .
+
+
+###  https://purl.org/cpwo/kos/TypeOfRelation
+ooh-kos:TypeOfRelation rdf:type owl:NamedIndividual ,
+                                skos:ConceptScheme .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+xsd:date rdfs:comment "Criminal law"@en-gb ;
+         rdfs:label "criminal"@en-gb .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
