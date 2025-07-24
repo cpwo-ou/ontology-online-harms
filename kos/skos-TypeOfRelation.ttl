@@ -1,0 +1,40 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
+@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
+
+@prefix oohkos-typeofrelation: <https://purl.org/cpwo/kos/typeofrelation/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+ooh-kos:TypeOfRelation a skos:ConceptScheme ; 
+    dct:issued "2025-07-24"^^xsd:date ;
+    dct:modified "2025-07-24"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "Type Of Relation."@en ;
+    rdfs:label "Type Of Relation"@en ;
+    dct:title "Concept scheme grouping Type Of Relation"@en .
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+oohkos-typeofrelation:Peer a skos:Concept;
+  skos:inScheme ooh-kos:TypeOfRelation;
+  skos:note "Peer"@en;
+  skos:prefLabel "Peer"@en .
+
+oohkos-relationscope:Power a skos:Concept;
+  skos:inScheme ooh-kos:RelationScope;
+  skos:note "Power"@en;
+  skos:prefLabel "Power"@en .
