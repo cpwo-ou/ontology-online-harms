@@ -1,0 +1,75 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
+@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
+
+@prefix oohkos-sexualorientation: <https://purl.org/cpwo/kos/sexualorientation/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+ooh-kos:SexualOrientation a skos:ConceptScheme ; 
+    dct:issued "2025-07-24"^^xsd:date ;
+    dct:modified "2025-07-24"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "sexual orientation."@en ;
+    rdfs:label "Sexual Orientation"@en ;
+    dct:title "Concept scheme grouping sexual orientation"@en .
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+oohkos-sexualorientation:Asexual a skos:Concept;
+  skos:inScheme ooh-kos:SexualOrientation;
+  skos:note "Asexual"@en;
+  skos:prefLabel "Asexual"@en .
+
+oohkos-sexualorientation:Bisexual a skos:Concept;
+  skos:inScheme ooh-kos:SexualOrientation;
+  skos:note "Bisexual"@en;
+  skos:prefLabel "Bisexual"@en .
+
+oohkos-sexualorientation:Gay a skos:Concept;
+  skos:inScheme ooh-kos:SexualOrientation;
+  skos:note "Gay"@en;
+  skos:prefLabel "Gay"@en .
+
+oohkos-sexualorientation:Lesbian a skos:Concept;
+  skos:inScheme ooh-kos:SexualOrientation;
+  skos:note "Lesbian"@en;
+  skos:prefLabel "Lesbian"@en .
+
+oohkos-sexualorientation:Straight a skos:Concept;
+  skos:inScheme ooh-kos:SexualOrientation;
+  skos:note "Straight"@en;
+  skos:prefLabel "Straight"@en .
+
+oohkos-sexualorientation:Heterosexual a skos:Concept;
+  skos:inScheme ooh-kos:SexualOrientation;
+  skos:note "Heterosexual"@en;
+  skos:prefLabel "Heterosexual"@en .
+
+oohkos-sexualorientation:Queer a skos:Concept;
+  skos:inScheme ooh-kos:SexualOrientation;
+  skos:note "Queer"@en;
+  skos:prefLabel "Queer"@en .
+
+oohkos-sexualorientation:InAnotherWay a skos:Concept;
+  skos:inScheme ooh-kos:SexualOrientation;
+  skos:note "In another way"@en;
+  skos:prefLabel "In another way"@en .
+
+oohkos-sexualorientation:PreferNotToSay a skos:Concept;
+  skos:inScheme ooh-kos:SexualOrientation;
+  skos:note "Prefer not to say"@en;
+  skos:prefLabel "Prefer not to say"@en .
