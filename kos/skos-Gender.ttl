@@ -20,7 +20,7 @@ ooh-kos:Gender a skos:ConceptScheme ;
     dct:issued "2025-07-18"^^xsd:date ;
     dct:modified "2025-07-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
-    rdfs:comment "TXXXXXX."@en ;
+    rdfs:comment "Gender identity."@en ;
     rdfs:label "Gender"@en ;
     dct:title "Concept scheme grouping gender"@en .
 #################################################################
@@ -29,12 +29,27 @@ ooh-kos:Gender a skos:ConceptScheme ;
 #
 #################################################################
 
-oohkos-gender:Female a skos:Concept;
+oohkos-gender:Women a skos:Concept;
   skos:inScheme ooh-kos:Gender;
-  skos:note "XXXXX"@en;
-  skos:prefLabel "Female"@en .
+  skos:note "Women"@en;
+  skos:prefLabel "Women"@en .
 
-oohkos-gender:Male a skos:Concept;
+oohkos-gender:Man a skos:Concept;
   skos:inScheme ooh-kos:Gender;
-  skos:note "XXXXX"@en;
-  skos:prefLabel "Male"@en .
+  skos:note "Man"@en;
+  skos:prefLabel "Man"@en .
+
+oohkos-gender:NonBinary a skos:Concept;
+  skos:inScheme ooh-kos:Gender;
+  skos:note "Non-binary"@en;
+  skos:prefLabel "Non-binary"@en .
+
+oohkos-gender:InAnotherWay a skos:Concept;
+  skos:inScheme ooh-kos:Gender;
+  skos:note "In another way"@en;
+  skos:prefLabel "In another way"@en .
+
+oohkos-gender:PreferNotToSay a skos:Concept;
+  skos:inScheme ooh-kos:Gender;
+  skos:note "Prefer not to say"@en;
+  skos:prefLabel "Prefer not to say"@en .
