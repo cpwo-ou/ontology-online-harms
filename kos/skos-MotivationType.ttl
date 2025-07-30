@@ -20,7 +20,7 @@ ooh-kos:MotivationType a skos:ConceptScheme ;
     dct:issued "2025-07-30"^^xsd:date ;
     dct:modified "2025-07-30"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
-    rdfs:comment "motivationtype."@en ;
+    rdfs:comment "List of motivation types. The List can be expanded"@en ;
     rdfs:label "Motivation Type"@en ;
     dct:title "Concept scheme grouping motivation types"@en .
 #################################################################
@@ -31,30 +31,32 @@ ooh-kos:MotivationType a skos:ConceptScheme ;
 
 oohkos-motivationtype:FinancialGain a skos:Concept;
   skos:inScheme ooh-kos:MotivationType;
-  skos:note "Financial Gain"@en;
   skos:prefLabel "FinancialGain"@en .
 
 oohkos-motivationtype:Misogyny a skos:Concept;
   skos:inScheme ooh-kos:MotivationType;
-  skos:note "Misogyny"@en;
   skos:prefLabel "Misogyny"@en .
 
 oohkos-motivationtype:CauseHumilliation a skos:Concept;
   skos:inScheme ooh-kos:MotivationType;
-  skos:note "Cause Humilliation"@en;
   skos:prefLabel "CauseHumilliation"@en .
 
 oohkos-motivationtype:InitiateViolence a skos:Concept;
   skos:inScheme ooh-kos:MotivationType;
-  skos:note "Initiate Violence"@en;
   skos:prefLabel "InitiateViolence"@en .
 
 oohkos-motivationtype:IdeologicalMotivation a skos:Concept;
   skos:inScheme ooh-kos:MotivationType;
-  skos:note "Ideological Motivation"@en;
   skos:prefLabel "IdeologicalMotivation"@en .
 
 oohkos-motivationtype:Revenge a skos:Concept;
   skos:inScheme ooh-kos:MotivationType;
-  skos:note "Revenge"@en;
   skos:prefLabel "Revenge"@en .
+
+oohkos-motivationtype:ControlAndPower a skos:Concept;
+  skos:inScheme ooh-kos:MotivationType;
+  skos:prefLabel "ControlAndPower"@en .
+
+oohkos-motivationtype:CulturalBelief a skos:Concept;
+  skos:inScheme ooh-kos:MotivationType;
+  skos:prefLabel "CulturalBelief"@en .
