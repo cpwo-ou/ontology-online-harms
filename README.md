@@ -14,14 +14,14 @@ For Ontology documentation available [Ontology](ontology).
 
 ## Ontology graphic description:
 
-![Ontology of Online Gender-based Harms](diagrams/ooh-ontology-long-version.png?raw=true "Ontology of Online Gender-based Harms")
+![Ontology of Online Gender-based Harms](diagrams/ooh-ontology-general-view.png?raw=true "Ontology of Online Gender-based Harms")
 
 ## Statistics
 
-* Class count: 98
-* Object property count: 31
+* Class count: 87
+* Object property count: 32
 * Data property count:15
-* SubClassOf: 83
+* SubClassOf: 73
 * DisjointClasses: 1
 
 ## Repository contents
@@ -44,7 +44,6 @@ For Ontology documentation available [Ontology](ontology).
 
 ## Acknowledgements
 This project is being developed and maintained by to the Centre for Protecting Women Online [(CPWO)](https://university.open.ac.uk/centres/protecting-women-online/).
-We would like to extend our gratitude to Professor Oscar Corcho from Universidad Politécnica de Madrid for his invaluable expertise and guidance during the development of this ontology.
 
 ## Authors
 - Development and maintenance
@@ -63,4 +62,4 @@ We would like to extend our gratitude to Professor Oscar Corcho from Universidad
 	- Keely Duddin
 
 ## External Contributors
-	- Professor Oscar Corcho - Universidad Politécnica de Madrid
+- Professor Oscar Corcho - Universidad Politécnica de Madrid
