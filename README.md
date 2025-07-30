@@ -44,9 +44,9 @@ For Ontology documentation available [Ontology](ontology).
 
 ## Acknowledgements
 This project is being developed and maintained by to the Centre for Protecting Women Online [(CPWO)](https://university.open.ac.uk/centres/protecting-women-online/).
+We would like to extend our gratitude to Professor Oscar Corcho from Universidad Politécnica de Madrid for his invaluable expertise and guidance during the development of this ontology.
 
 ## Authors
-
 - Development and maintenance
 	- Miriam Fernandez
 	- Alba Morales Tirado
@@ -61,3 +61,6 @@ This project is being developed and maintained by to the Centre for Protecting W
 	- Arosha Bandara
 	- Min Zhang
 	- Keely Duddin
+
+## External Contributors
+	- Professor Oscar Corcho - Universidad Politécnica de Madrid
