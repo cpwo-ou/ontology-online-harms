@@ -1,7 +1,7 @@
 # Ontology Online of Gender-based Harms
 ## Produced by the Centre for Protecting Women Online - CPWO
 
-The ontology aims to formalise and integrate diverse conceptualisations of online harms, grounded in empirical evidence, stakeholder engagement, and iterative feedback loops. 
+The ontology aims to formalise and integrate diverse conceptualisations of online harms, grounded in empirical evidence, stakeholder engagement, and iterative feedback loops.
 Led by the Centre for Protecting Women Online (CPWO) it is developed on the grounds of a collaborative and coordinated work across domains and sectors, and provide a reusable resource for researchers, practitioners, and developers aiming to understand, detect, and prevent online gender-based harms.
 
 ## Ontology description
@@ -14,15 +14,15 @@ For Ontology documentation available [Ontology](ontology).
 
 ## Ontology graphic description:
 
-![Ontology of Online Gender-based Harms](ontology/ooh-ontology-long-version.png?raw=true "Ontology of Online Gender-based Harms")
+![Ontology of Online Gender-based Harms](diagrams/ooh-ontology-long-version.png?raw=true "Ontology of Online Gender-based Harms")
 
 ## Statistics
 
-* Class count: 89
-* Object property count: 16
-* Data property count: 3
-* SubClassOf: 90
-* DisjointClasses: 9
+* Class count: 98
+* Object property count: 31
+* Data property count:15
+* SubClassOf: 83
+* DisjointClasses: 1
 
 ## Repository contents
 
@@ -35,6 +35,8 @@ For Ontology documentation available [Ontology](ontology).
 	* Definitions
 	* Source code
 	* Graphic representation: condensed and complete views
+* [Examples](examples)
+* [Documentation](docs)
 
 ## License
 
