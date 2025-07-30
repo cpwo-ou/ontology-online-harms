@@ -29,10 +29,10 @@ ooh-kos:Gender a skos:ConceptScheme ;
 #
 #################################################################
 
-oohkos-gender:Women a skos:Concept;
+oohkos-gender:Woman a skos:Concept;
   skos:inScheme ooh-kos:Gender;
-  skos:note "Women"@en;
-  skos:prefLabel "Women"@en .
+  skos:note "Woman"@en;
+  skos:prefLabel "Woman"@en .
 
 oohkos-gender:Man a skos:Concept;
   skos:inScheme ooh-kos:Gender;
