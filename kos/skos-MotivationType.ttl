@@ -1,0 +1,60 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
+@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
+
+@prefix oohkos-motivationtype: <https://purl.org/cpwo/kos/motivationtype/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+ooh-kos:MotivationType a skos:ConceptScheme ; 
+    dct:issued "2025-07-30"^^xsd:date ;
+    dct:modified "2025-07-30"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "motivationtype."@en ;
+    rdfs:label "Motivation Type"@en ;
+    dct:title "Concept scheme grouping motivation types"@en .
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+oohkos-motivationtype:FinancialGain a skos:Concept;
+  skos:inScheme ooh-kos:MotivationType;
+  skos:note "Financial Gain"@en;
+  skos:prefLabel "FinancialGain"@en .
+
+oohkos-motivationtype:Misogyny a skos:Concept;
+  skos:inScheme ooh-kos:MotivationType;
+  skos:note "Misogyny"@en;
+  skos:prefLabel "Misogyny"@en .
+
+oohkos-motivationtype:CauseHumilliation a skos:Concept;
+  skos:inScheme ooh-kos:MotivationType;
+  skos:note "Cause Humilliation"@en;
+  skos:prefLabel "CauseHumilliation"@en .
+
+oohkos-motivationtype:InitiateViolence a skos:Concept;
+  skos:inScheme ooh-kos:MotivationType;
+  skos:note "Initiate Violence"@en;
+  skos:prefLabel "InitiateViolence"@en .
+
+oohkos-motivationtype:IdeologicalMotivation a skos:Concept;
+  skos:inScheme ooh-kos:MotivationType;
+  skos:note "Ideological Motivation"@en;
+  skos:prefLabel "IdeologicalMotivation"@en .
+
+oohkos-motivationtype:Revenge a skos:Concept;
+  skos:inScheme ooh-kos:MotivationType;
+  skos:note "Revenge"@en;
+  skos:prefLabel "Revenge"@en .
