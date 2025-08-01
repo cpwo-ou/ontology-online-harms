@@ -5,10 +5,10 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix ooh: <https://purl.org/cpwo/ontology/ooh#> .
-@prefix ooh-kos: <https://purl.org/cpwo/kos/> .
+@prefix ooh: <https://cpwo.open.ac.uk/ontology/ooh#> .
+@prefix ooh-kos: <https://cpwo.open.ac.uk/ontology/kos/> .
 
-@prefix oohkos-legislationScope: <https://purl.org/cpwo/kos/legislationScope/> .
+@prefix oohkos-legislationScope: <https://cpwo.open.ac.uk/ontology/kos/legislationScope/> .
 
 #################################################################
 #
