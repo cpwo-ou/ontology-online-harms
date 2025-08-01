@@ -7,12 +7,12 @@ Led by the Centre for Protecting Women Online (CPWO) it is developed on the grou
 ## Ontology description
 
 - Prefix: ooh
-- Namespace: https://purl.org/cpwo/ontology/ooh
+- Namespace: https://cpwo.open.ac.uk/ontology/ooh
 
-The central concept mentioned in the knowledge requirements and therefore, the core class of our ontology is `HarmfulAct`. We adopted a definition of online harms that incorporates at design level law-oriented elements such as `actus reus` and `mens rea`, while including other core classes to capture the knowledge requirements of all the disciplines involved.
+The central concept mentioned in the knowledge requirements and therefore, the core class of our ontology is harmful `Act`. We adopted a definition of online harms that incorporates at design level law-oriented elements such as `actus reus` and `mens rea`, while including other core classes to capture the knowledge requirements of all the disciplines involved.
 For Ontology documentation available [Ontology](ontology).
 
-## Ontology graphic description:
+## Ontology graphic description (core classes):
 
 ![Ontology of Online Gender-based Harms](diagrams/ooh-ontology-general-view.png?raw=true "Ontology of Online Gender-based Harms")
 
@@ -34,13 +34,9 @@ For Ontology documentation available [Ontology](ontology).
 * [Ontology](ontology)
 	* Definitions
 	* Source code
-	* Graphic representation: condensed and complete views
+	* Graphic representation: general, core and modular views
 * [Examples](examples)
 * [Documentation](docs)
-
-## License
-
-[GPL-3.0 license](https://github.com/albamoralest/ontology-online-harms?tab=GPL-3.0-1-ov-file)
 
 ## Acknowledgements
 This project is being developed and maintained by to the Centre for Protecting Women Online [(CPWO)](https://university.open.ac.uk/centres/protecting-women-online/).
@@ -63,3 +59,16 @@ This project is being developed and maintained by to the Centre for Protecting W
 
 ## External Contributors
 - Professor Oscar Corcho - Universidad Politécnica de Madrid
+
+## License
+
+Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
